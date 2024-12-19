@@ -26,12 +26,7 @@
         ' Mengubah warna latar belakang Panel 
         plnNavigasi.BackColor = ColorTranslator.FromHtml("#0D9276")
 
-
-
     End Sub
-
-
-
 
     ' Method untuk menampilkan form di panel konten
     Private Sub TampilkanForm(form As Form)
@@ -70,11 +65,4 @@
         TampilkanForm(formDataDaftarPasien)
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
 End Class

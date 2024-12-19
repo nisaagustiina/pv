@@ -59,7 +59,7 @@ Partial Class FormUtama
         ' 
         ' btnDataDaftarPasien
         ' 
-        btnDataDaftarPasien.Location = New Point(30, 806)
+        btnDataDaftarPasien.Location = New Point(30, 502)
         btnDataDaftarPasien.Margin = New Padding(4, 5, 4, 5)
         btnDataDaftarPasien.Name = "btnDataDaftarPasien"
         btnDataDaftarPasien.Size = New Size(314, 46)
@@ -69,7 +69,7 @@ Partial Class FormUtama
         ' 
         ' btnTekanan
         ' 
-        btnTekanan.Location = New Point(30, 640)
+        btnTekanan.Location = New Point(30, 435)
         btnTekanan.Margin = New Padding(4, 5, 4, 5)
         btnTekanan.Name = "btnTekanan"
         btnTekanan.Size = New Size(314, 46)
@@ -79,7 +79,7 @@ Partial Class FormUtama
         ' 
         ' btnBMI
         ' 
-        btnBMI.Location = New Point(30, 471)
+        btnBMI.Location = New Point(30, 369)
         btnBMI.Margin = New Padding(4, 5, 4, 5)
         btnBMI.Name = "btnBMI"
         btnBMI.Size = New Size(314, 46)
@@ -108,7 +108,7 @@ Partial Class FormUtama
         ' 
         ' FormUtama
         ' 
-        AutoScaleDimensions = New SizeF(12F, 32F)
+        AutoScaleDimensions = New SizeF(9F, 24F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1728, 1055)
         Controls.Add(pnlKonten)

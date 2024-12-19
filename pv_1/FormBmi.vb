@@ -1,12 +1,4 @@
-﻿Imports System.Windows.Forms
-
-Public Class FormBmi
-    Enum BMICategory
-        Underweight
-        Normal
-        Overweight
-        Obese
-    End Enum
+﻿Public Class FormBmi
 
     Const UnderweightLimit As Double = 18.5
     Const NormalLimit As Double = 24.9
@@ -19,47 +11,54 @@ Public Class FormBmi
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
         name = txtName.Text
-        If Double.TryParse(TxtWeight.Text, weight) And Double.TryParse(TxtHeight.Text, height) Then
+
+        If String.IsNullOrWhiteSpace(name) Then
+            MessageBox.Show("Masukkan nama Anda.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        If Double.TryParse(txtWeight.Text, weight) And Double.TryParse(txtHeight.Text, height) Then
             If weight > 0 And height > 0 Then
+
+                ' Asumsikan nilai tinggi adalah cm, ubah ke meter
+                height = height / 100
                 bmi = weight / (height * height)
 
-                Dim category As BMICategory = GetBMICategory(bmi)
+                Dim category As String = GetBMICategory(bmi)
 
-                lblResult.Text = "BMI Anda: " & bmi.ToString("F2")
-
-                Select Case category
-                    Case BMICategory.Underweight
-                        MessageBox.Show(name & ", berat badan Anda kurang.", "BMI Category")
-                    Case BMICategory.Normal
-                        MessageBox.Show(name & ", berat badan Anda normal.", "BMI Category")
-                    Case BMICategory.Overweight
-                        MessageBox.Show(name & ", Anda memiliki kelebihan berat badan.", "BMI Category")
-                    Case BMICategory.Obese
-                        MessageBox.Show(name & ", Anda obesitas.", "BMI Category")
-                End Select
+                MessageBox.Show("Nama: " & name & Environment.NewLine &
+                        "BMI: " & bmi.ToString("F2") & Environment.NewLine &
+                        "Kategori: " & category, "Informasi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MessageBox.Show("Masukkan nilai berat badan dan tinggi badan yang valid.", "Error")
+                MessageBox.Show("Masukkan nilai berat badan dan tinggi badan yang valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
         Else
-            MessageBox.Show("Tolong masukkan angka yang valid untuk berat badan dan tinggi badan.", "Error")
+            MessageBox.Show("Tolong masukkan angka yang valid untuk berat badan dan tinggi badan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
+
+        ClearForm()
     End Sub
 
-    Private Function GetBMICategory(ByVal bmi As Double) As BMICategory
+    Private Function GetBMICategory(ByVal bmi As Double) As String
         If bmi < UnderweightLimit Then
-            Return BMICategory.Underweight
+            Return "Kekurangan Berat Badan"
         ElseIf bmi <= NormalLimit Then
-            Return BMICategory.Normal
+            Return "Normal"
         ElseIf bmi <= OverweightLimit Then
-            Return BMICategory.Overweight
+            Return "Kelebihan Berat Badan"
         Else
-            Return BMICategory.Obese
+            Return "Obesitas"
         End If
     End Function
 
-    Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
-        Dim form1 As New Form1()
-        form1.Show()
-        Me.Close()
+    Private Sub ClearForm()
+        txtName.Clear()
+        txtWeight.Clear()
+        txtHeight.Clear()
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        ClearForm()
     End Sub
 End Class

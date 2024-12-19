@@ -44,10 +44,8 @@
         pnlKontenDaftarPasien.Top = (Me.ClientSize.Height - pnlKontenDaftarPasien.Height) / 2
     End Sub
 
-
-
     'Menyimpan data dari form pendaftaran pasien ke DataTable
-    Private Sub btnSimpan_Click(sender As Object, e As EventArgs)
+    Private Sub btnSimpan_Click_1(sender As Object, e As EventArgs) Handles btnSimpan.Click
         ' Validasi inputan kosong (opsional)
         If txtNamaPasien.Text = "" OrElse txtNIK.Text = "" OrElse txtNoRekamMedis.Text = "" Then
             MessageBox.Show("Harap isi semua kolom yang wajib.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -96,5 +94,8 @@
         dtpTanggalLahir.Value = DateTime.Now
     End Sub
 
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        ClearForm()
+    End Sub
 
 End Class

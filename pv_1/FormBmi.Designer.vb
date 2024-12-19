@@ -22,113 +22,160 @@ Partial Class FormBmi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        TxtWeight = New TextBox()
-        Label2 = New Label()
-        TxtHeight = New TextBox()
-        Label3 = New Label()
+        lblWeight = New Label()
+        txtWeight = New TextBox()
+        lblHeight = New Label()
+        txtHeight = New TextBox()
+        lblName = New Label()
         txtName = New TextBox()
         btnCalculate = New Button()
-        lblResult = New Label()
+        pnlBmi = New Panel()
+        btnReset = New Button()
+        lblTitle = New Label()
+        pnlBmi.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Label1
+        ' lblWeight
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(69, 115)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(90, 20)
-        Label1.TabIndex = 0
-        Label1.Text = "Berat Badan"
+        lblWeight.AutoSize = True
+        lblWeight.Font = New Font("Sans Serif Collection", 7.8F)
+        lblWeight.ForeColor = SystemColors.ControlLightLight
+        lblWeight.Location = New Point(85, 93)
+        lblWeight.Name = "lblWeight"
+        lblWeight.Size = New Size(110, 27)
+        lblWeight.TabIndex = 0
+        lblWeight.Text = "Berat Badan"
         ' 
-        ' TxtWeight
+        ' txtWeight
         ' 
-        TxtWeight.Location = New Point(197, 111)
-        TxtWeight.Margin = New Padding(3, 4, 3, 4)
-        TxtWeight.Name = "TxtWeight"
-        TxtWeight.Size = New Size(165, 27)
-        TxtWeight.TabIndex = 1
+        txtWeight.Font = New Font("Sans Serif Collection", 9F)
+        txtWeight.Location = New Point(246, 93)
+        txtWeight.Name = "txtWeight"
+        txtWeight.Size = New Size(216, 37)
+        txtWeight.TabIndex = 1
         ' 
-        ' Label2
+        ' lblHeight
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(69, 168)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(97, 20)
-        Label2.TabIndex = 2
-        Label2.Text = "Tinggi Badan"
+        lblHeight.AutoSize = True
+        lblHeight.Font = New Font("Sans Serif Collection", 7.8F)
+        lblHeight.ForeColor = SystemColors.ControlLightLight
+        lblHeight.Location = New Point(85, 142)
+        lblHeight.Name = "lblHeight"
+        lblHeight.Size = New Size(117, 27)
+        lblHeight.TabIndex = 2
+        lblHeight.Text = "Tinggi Badan"
         ' 
-        ' TxtHeight
+        ' txtHeight
         ' 
-        TxtHeight.Location = New Point(197, 157)
-        TxtHeight.Margin = New Padding(3, 4, 3, 4)
-        TxtHeight.Name = "TxtHeight"
-        TxtHeight.Size = New Size(165, 27)
-        TxtHeight.TabIndex = 3
+        txtHeight.Font = New Font("Sans Serif Collection", 9F)
+        txtHeight.Location = New Point(246, 142)
+        txtHeight.Name = "txtHeight"
+        txtHeight.Size = New Size(216, 37)
+        txtHeight.TabIndex = 3
         ' 
-        ' Label3
+        ' lblName
         ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(69, 69)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(49, 20)
-        Label3.TabIndex = 4
-        Label3.Text = "Nama"
+        lblName.AutoSize = True
+        lblName.Font = New Font("Sans Serif Collection", 7.8F)
+        lblName.ForeColor = SystemColors.ControlLightLight
+        lblName.Location = New Point(85, 44)
+        lblName.Name = "lblName"
+        lblName.Size = New Size(59, 27)
+        lblName.TabIndex = 78
+        lblName.Text = "Nama"
         ' 
         ' txtName
         ' 
-        txtName.Location = New Point(197, 59)
-        txtName.Margin = New Padding(3, 4, 3, 4)
+        txtName.Font = New Font("Sans Serif Collection", 9F)
+        txtName.Location = New Point(246, 44)
         txtName.Name = "txtName"
-        txtName.Size = New Size(165, 27)
+        txtName.Size = New Size(216, 37)
         txtName.TabIndex = 5
         ' 
         ' btnCalculate
         ' 
-        btnCalculate.Location = New Point(73, 239)
-        btnCalculate.Margin = New Padding(3, 4, 3, 4)
+        btnCalculate.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnCalculate.BackgroundImageLayout = ImageLayout.None
+        btnCalculate.FlatAppearance.BorderSize = 0
+        btnCalculate.FlatStyle = FlatStyle.Flat
+        btnCalculate.Font = New Font("Sans Serif Collection", 7.8F)
+        btnCalculate.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnCalculate.Location = New Point(246, 204)
         btnCalculate.Name = "btnCalculate"
-        btnCalculate.Size = New Size(86, 31)
+        btnCalculate.Size = New Size(75, 37)
         btnCalculate.TabIndex = 6
         btnCalculate.Text = "Hitung"
-        btnCalculate.UseVisualStyleBackColor = True
+        btnCalculate.UseVisualStyleBackColor = False
         ' 
-        ' lblResult
+        ' pnlBmi
         ' 
-        lblResult.AutoSize = True
-        lblResult.Location = New Point(76, 299)
-        lblResult.Name = "lblResult"
-        lblResult.Size = New Size(42, 20)
-        lblResult.TabIndex = 7
-        lblResult.Text = "Hasil"
+        pnlBmi.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        pnlBmi.Controls.Add(btnReset)
+        pnlBmi.Controls.Add(txtName)
+        pnlBmi.Controls.Add(txtHeight)
+        pnlBmi.Controls.Add(txtWeight)
+        pnlBmi.Controls.Add(lblName)
+        pnlBmi.Controls.Add(btnCalculate)
+        pnlBmi.Controls.Add(lblWeight)
+        pnlBmi.Controls.Add(lblHeight)
+        pnlBmi.Location = New Point(121, 57)
+        pnlBmi.Name = "pnlBmi"
+        pnlBmi.Size = New Size(534, 353)
+        pnlBmi.TabIndex = 8
+        ' 
+        ' btnReset
+        ' 
+        btnReset.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnReset.FlatAppearance.BorderSize = 0
+        btnReset.FlatStyle = FlatStyle.Flat
+        btnReset.Font = New Font("Sans Serif Collection", 7.8F)
+        btnReset.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnReset.Location = New Point(338, 204)
+        btnReset.Name = "btnReset"
+        btnReset.Size = New Size(75, 37)
+        btnReset.TabIndex = 79
+        btnReset.Text = "Hapus"
+        btnReset.UseMnemonic = False
+        btnReset.UseVisualStyleBackColor = False
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        lblTitle.Cursor = Cursors.Cross
+        lblTitle.Font = New Font("Sans Serif Collection", 9F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        lblTitle.Location = New Point(290, 41)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(192, 29)
+        lblTitle.TabIndex = 9
+        lblTitle.Text = "PERHITUNGAN BMI"
         ' 
         ' FormBmi
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(914, 600)
-        Controls.Add(lblResult)
-        Controls.Add(btnCalculate)
-        Controls.Add(txtName)
-        Controls.Add(Label3)
-        Controls.Add(TxtHeight)
-        Controls.Add(Label2)
-        Controls.Add(TxtWeight)
-        Controls.Add(Label1)
-        Margin = New Padding(3, 4, 3, 4)
-        name = "FormBmi"
+        BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        ClientSize = New Size(800, 450)
+        Controls.Add(lblTitle)
+        Controls.Add(pnlBmi)
+        Name = "FormBmi"
         Text = "Perhitungan BMI"
+        pnlBmi.ResumeLayout(False)
+        pnlBmi.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TxtWeight As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TxtHeight As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblWeight As Label
+    Friend WithEvents txtWeight As TextBox
+    Friend WithEvents lblHeight As Label
+    Friend WithEvents txtHeight As TextBox
+    Friend WithEvents lblName As Label
     Friend WithEvents txtName As TextBox
     Friend WithEvents btnCalculate As Button
-    Friend WithEvents lblResult As Label
     Friend WithEvents btnReturn As Button
+    Friend WithEvents pnlBmi As Panel
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents btnReset As Button
 End Class

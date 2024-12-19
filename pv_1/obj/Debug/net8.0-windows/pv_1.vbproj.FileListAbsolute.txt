@@ -38,3 +38,26 @@ C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024
 C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\UTS 09 Des - 22 Des 2024\pv_1\pv_1\pv_1\obj\Debug\net8.0-windows\pv_1.FormTekananDarah.resources
 C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\UTS 09 Des - 22 Des 2024\pv_1\pv_1\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataDaftarPasien.resources
 C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\UTS 09 Des - 22 Des 2024\pv_1\pv_1\pv_1\obj\Debug\net8.0-windows\pv_1.Resources.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.exe
+C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.deps.json
+C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.runtimeconfig.json
+C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.dll
+C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.pdb
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.Form1.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormBmi.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataDaftarPasien.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormPendaftaranPasien.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormTekananDarah.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormUtama.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.Resources.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.GenerateResource.cache
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.AssemblyInfoInputs.cache
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.AssemblyInfo.vb
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.CoreCompileInputs.cache
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.sourcelink.json
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.dll
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\refint\pv_1.dll
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.pdb
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.genruntimeconfig.cache
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\ref\pv_1.dll

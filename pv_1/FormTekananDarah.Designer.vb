@@ -22,107 +22,135 @@ Partial Class FormTekananDarah
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        MenuStrip1 = New MenuStrip()
-        Label1 = New Label()
+        lblSistolik = New Label()
         txtSistolik = New TextBox()
-        Label2 = New Label()
+        lblDiastolik = New Label()
         txtDiastolik = New TextBox()
-        btnHitung = New Button()
-        lblHasil = New Label()
+        btnCalculate = New Button()
+        pnlTekananDarah = New Panel()
+        btnReset = New Button()
+        lblTitle = New Label()
+        pnlTekananDarah.SuspendLayout()
         SuspendLayout()
         ' 
-        ' MenuStrip1
+        ' lblSistolik
         ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(7, 3, 0, 3)
-        MenuStrip1.Size = New Size(914, 24)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(70, 87)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(158, 20)
-        Label1.TabIndex = 2
-        Label1.Text = "Tekanan Darah Sistolik"
+        lblSistolik.AutoSize = True
+        lblSistolik.Font = New Font("Sans Serif Collection", 7.8F)
+        lblSistolik.ForeColor = SystemColors.ControlLightLight
+        lblSistolik.Location = New Point(40, 55)
+        lblSistolik.Name = "lblSistolik"
+        lblSistolik.Size = New Size(195, 27)
+        lblSistolik.TabIndex = 2
+        lblSistolik.Text = "Tekanan Darah Sistolik"
         ' 
         ' txtSistolik
         ' 
-        txtSistolik.Location = New Point(247, 87)
-        txtSistolik.Margin = New Padding(3, 4, 3, 4)
+        txtSistolik.Font = New Font("Sans Serif Collection", 7.8F)
+        txtSistolik.Location = New Point(269, 55)
         txtSistolik.Name = "txtSistolik"
-        txtSistolik.Size = New Size(205, 27)
+        txtSistolik.Size = New Size(202, 33)
         txtSistolik.TabIndex = 3
         ' 
-        ' Label2
+        ' lblDiastolik
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(70, 145)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(169, 20)
-        Label2.TabIndex = 4
-        Label2.Text = "Tekanan Darah Diastolik"
+        lblDiastolik.AutoSize = True
+        lblDiastolik.Font = New Font("Sans Serif Collection", 7.8F)
+        lblDiastolik.ForeColor = SystemColors.ControlLightLight
+        lblDiastolik.Location = New Point(40, 114)
+        lblDiastolik.Name = "lblDiastolik"
+        lblDiastolik.Size = New Size(206, 27)
+        lblDiastolik.TabIndex = 4
+        lblDiastolik.Text = "Tekanan Darah Diastolik"
         ' 
         ' txtDiastolik
         ' 
-        txtDiastolik.Location = New Point(247, 145)
-        txtDiastolik.Margin = New Padding(3, 4, 3, 4)
+        txtDiastolik.Font = New Font("Sans Serif Collection", 7.8F)
+        txtDiastolik.Location = New Point(269, 111)
         txtDiastolik.Name = "txtDiastolik"
-        txtDiastolik.Size = New Size(205, 27)
+        txtDiastolik.Size = New Size(202, 33)
         txtDiastolik.TabIndex = 5
         ' 
-        ' btnHitung
+        ' btnCalculate
         ' 
-        btnHitung.Location = New Point(70, 215)
-        btnHitung.Margin = New Padding(3, 4, 3, 4)
-        btnHitung.Name = "btnHitung"
-        btnHitung.Size = New Size(86, 31)
-        btnHitung.TabIndex = 6
-        btnHitung.Text = "Hitung"
-        btnHitung.UseVisualStyleBackColor = True
+        btnCalculate.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnCalculate.BackgroundImageLayout = ImageLayout.None
+        btnCalculate.FlatAppearance.BorderSize = 0
+        btnCalculate.FlatStyle = FlatStyle.Flat
+        btnCalculate.Font = New Font("Sans Serif Collection", 7.8F)
+        btnCalculate.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnCalculate.Location = New Point(269, 175)
+        btnCalculate.Name = "btnCalculate"
+        btnCalculate.Size = New Size(82, 35)
+        btnCalculate.TabIndex = 6
+        btnCalculate.Text = "Hitung"
+        btnCalculate.UseVisualStyleBackColor = False
         ' 
-        ' lblHasil
+        ' pnlTekananDarah
         ' 
-        lblHasil.AutoSize = True
-        lblHasil.Location = New Point(70, 263)
-        lblHasil.Name = "lblHasil"
-        lblHasil.Size = New Size(42, 20)
-        lblHasil.TabIndex = 7
-        lblHasil.Text = "Hasil"
+        pnlTekananDarah.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        pnlTekananDarah.Controls.Add(btnReset)
+        pnlTekananDarah.Controls.Add(lblSistolik)
+        pnlTekananDarah.Controls.Add(txtSistolik)
+        pnlTekananDarah.Controls.Add(btnCalculate)
+        pnlTekananDarah.Controls.Add(lblDiastolik)
+        pnlTekananDarah.Controls.Add(txtDiastolik)
+        pnlTekananDarah.Location = New Point(118, 65)
+        pnlTekananDarah.Name = "pnlTekananDarah"
+        pnlTekananDarah.Size = New Size(544, 326)
+        pnlTekananDarah.TabIndex = 8
+        ' 
+        ' btnReset
+        ' 
+        btnReset.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnReset.BackgroundImageLayout = ImageLayout.None
+        btnReset.FlatAppearance.BorderSize = 0
+        btnReset.FlatStyle = FlatStyle.Flat
+        btnReset.Font = New Font("Sans Serif Collection", 7.8F)
+        btnReset.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnReset.Location = New Point(367, 175)
+        btnReset.Name = "btnReset"
+        btnReset.Size = New Size(75, 35)
+        btnReset.TabIndex = 8
+        btnReset.Text = "Hapus"
+        btnReset.UseVisualStyleBackColor = False
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.Font = New Font("Sans Serif Collection", 9F, FontStyle.Bold)
+        lblTitle.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        lblTitle.Location = New Point(225, 49)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(324, 29)
+        lblTitle.TabIndex = 9
+        lblTitle.Text = "PERHITUNGAN TEKANAN DARAH"
         ' 
         ' FormTekananDarah
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(914, 600)
-        Controls.Add(lblHasil)
-        Controls.Add(btnHitung)
-        Controls.Add(txtDiastolik)
-        Controls.Add(Label2)
-        Controls.Add(txtSistolik)
-        Controls.Add(Label1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
-        Margin = New Padding(3, 4, 3, 4)
+        BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        ClientSize = New Size(800, 450)
+        Controls.Add(lblTitle)
+        Controls.Add(pnlTekananDarah)
         Name = "FormTekananDarah"
         Text = "Perhitungan Tekanan Darah"
+        pnlTekananDarah.ResumeLayout(False)
+        pnlTekananDarah.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MenuStrip2 As MenuStrip
     Friend WithEvents menuExit As ToolStripMenuItem
     Friend WithEvents menuAbout As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblSistolik As Label
     Friend WithEvents txtSistolik As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblDiastolik As Label
     Friend WithEvents txtDiastolik As TextBox
-    Friend WithEvents btnHitung As Button
-    Friend WithEvents lblHasil As Label
+    Friend WithEvents btnCalculate As Button
+    Friend WithEvents pnlTekananDarah As Panel
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents btnReset As Button
 
 End Class
