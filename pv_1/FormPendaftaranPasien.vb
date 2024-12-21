@@ -95,7 +95,32 @@
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        ClearForm()
+        ' Custom dialog untuk konfirmasi
+        Dim dialog As New FormCustomDialog()
+        dialog.Pesan = "Apakah Anda yakin ingin menghapus data inputan?"
+        Dim result As DialogResult = dialog.ShowDialog()
+
+        If result = DialogResult.Yes Then
+            ' Reset semua inputan
+            txtNamaPasien.Text = String.Empty
+            txtNoRekamMedis.Text = String.Empty
+            txtNIK.Text = String.Empty
+            dtpTanggalLahir.Value = DateTime.Now ' Reset ke tanggal hari ini
+            txtUsia.Text = String.Empty
+            txtAlamat.Text = String.Empty
+            txtNoTelepon.Text = String.Empty
+            txtRiwayatPenyakit.Text = String.Empty
+            cbJenisPendaftaran.SelectedIndex = -1 ' Reset ComboBox ke kondisi kosong
+            cbTipePembayaran.SelectedIndex = -1 ' Reset ComboBox ke kondisi kosong
+            rbLakiLaki.Checked = False ' Reset RadioButton jenis kelamin
+            rbPerempuan.Checked = False ' Reset RadioButton jenis kelamin
+
+            ' Tampilkan pesan bahwa inputan telah dihapus
+            MessageBox.Show("Data inputan berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            ' Jika tidak jadi menghapus
+            MessageBox.Show("Data inputan tidak jadi dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
 End Class

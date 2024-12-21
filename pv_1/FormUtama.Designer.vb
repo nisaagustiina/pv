@@ -44,7 +44,7 @@ Partial Class FormUtama
         plnNavigasi.Location = New Point(0, 0)
         plnNavigasi.Margin = New Padding(4, 5, 4, 5)
         plnNavigasi.Name = "plnNavigasi"
-        plnNavigasi.Size = New Size(376, 1055)
+        plnNavigasi.Size = New Size(346, 1055)
         plnNavigasi.TabIndex = 0
         ' 
         ' PictureBox1
@@ -52,47 +52,47 @@ Partial Class FormUtama
         PictureBox1.Image = My.Resources.Resources.Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template_removebg_preview1
         PictureBox1.Location = New Point(8, 12)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(361, 202)
+        PictureBox1.Size = New Size(334, 202)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 4
         PictureBox1.TabStop = False
         ' 
         ' btnDataDaftarPasien
         ' 
-        btnDataDaftarPasien.Location = New Point(30, 502)
+        btnDataDaftarPasien.Location = New Point(24, 508)
         btnDataDaftarPasien.Margin = New Padding(4, 5, 4, 5)
         btnDataDaftarPasien.Name = "btnDataDaftarPasien"
-        btnDataDaftarPasien.Size = New Size(314, 46)
+        btnDataDaftarPasien.Size = New Size(294, 46)
         btnDataDaftarPasien.TabIndex = 3
         btnDataDaftarPasien.Text = "Data Daftar Pasien"
         btnDataDaftarPasien.UseVisualStyleBackColor = True
         ' 
         ' btnTekanan
         ' 
-        btnTekanan.Location = New Point(30, 435)
+        btnTekanan.Location = New Point(24, 441)
         btnTekanan.Margin = New Padding(4, 5, 4, 5)
         btnTekanan.Name = "btnTekanan"
-        btnTekanan.Size = New Size(314, 46)
+        btnTekanan.Size = New Size(294, 46)
         btnTekanan.TabIndex = 2
         btnTekanan.Text = "Perhitungan Tekanan Darah "
         btnTekanan.UseVisualStyleBackColor = True
         ' 
         ' btnBMI
         ' 
-        btnBMI.Location = New Point(30, 369)
+        btnBMI.Location = New Point(24, 375)
         btnBMI.Margin = New Padding(4, 5, 4, 5)
         btnBMI.Name = "btnBMI"
-        btnBMI.Size = New Size(314, 46)
+        btnBMI.Size = New Size(294, 46)
         btnBMI.TabIndex = 1
         btnBMI.Text = "Perhitungan BMI"
         btnBMI.UseVisualStyleBackColor = True
         ' 
         ' btnPendaftaran
         ' 
-        btnPendaftaran.Location = New Point(30, 302)
+        btnPendaftaran.Location = New Point(24, 308)
         btnPendaftaran.Margin = New Padding(4, 5, 4, 5)
         btnPendaftaran.Name = "btnPendaftaran"
-        btnPendaftaran.Size = New Size(314, 46)
+        btnPendaftaran.Size = New Size(294, 46)
         btnPendaftaran.TabIndex = 0
         btnPendaftaran.Text = "Pendaftaran Pasien"
         btnPendaftaran.UseVisualStyleBackColor = True
@@ -100,15 +100,15 @@ Partial Class FormUtama
         ' pnlKonten
         ' 
         pnlKonten.Dock = DockStyle.Fill
-        pnlKonten.Location = New Point(376, 0)
+        pnlKonten.Location = New Point(346, 0)
         pnlKonten.Margin = New Padding(4, 5, 4, 5)
         pnlKonten.Name = "pnlKonten"
-        pnlKonten.Size = New Size(1352, 1055)
+        pnlKonten.Size = New Size(1382, 1055)
         pnlKonten.TabIndex = 1
         ' 
         ' FormUtama
         ' 
-        AutoScaleDimensions = New SizeF(9F, 24F)
+        AutoScaleDimensions = New SizeF(12F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1728, 1055)
         Controls.Add(pnlKonten)

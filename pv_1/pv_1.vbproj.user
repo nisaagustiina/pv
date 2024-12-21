@@ -7,6 +7,9 @@
     <Compile Update="FormBmi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormCustomDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDataDaftarPasien.vb">
       <SubType>Form</SubType>
     </Compile>
