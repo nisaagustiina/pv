@@ -15,3 +15,5 @@ Release/
 *.msp
 *.[Dd]s_store
 Thumbs.db
+/packages/
+/log/
