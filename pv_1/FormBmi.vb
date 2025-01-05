@@ -58,7 +58,7 @@
         txtHeight.Clear()
     End Sub
 
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        ClearForm()
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+
     End Sub
 End Class

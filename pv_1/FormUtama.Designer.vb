@@ -29,12 +29,14 @@ Partial Class FormUtama
         btnBMI = New Button()
         btnPendaftaran = New Button()
         pnlKonten = New Panel()
+        btnConfig = New Button()
         plnNavigasi.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' plnNavigasi
         ' 
+        plnNavigasi.Controls.Add(btnConfig)
         plnNavigasi.Controls.Add(PictureBox1)
         plnNavigasi.Controls.Add(btnDataDaftarPasien)
         plnNavigasi.Controls.Add(btnTekanan)
@@ -64,7 +66,7 @@ Partial Class FormUtama
         btnDataDaftarPasien.Name = "btnDataDaftarPasien"
         btnDataDaftarPasien.Size = New Size(294, 46)
         btnDataDaftarPasien.TabIndex = 3
-        btnDataDaftarPasien.Text = "Data Daftar Pasien"
+        btnDataDaftarPasien.Text = "Data Pasien"
         btnDataDaftarPasien.UseVisualStyleBackColor = True
         ' 
         ' btnTekanan
@@ -106,9 +108,18 @@ Partial Class FormUtama
         pnlKonten.Size = New Size(1382, 1055)
         pnlKonten.TabIndex = 1
         ' 
+        ' btnConfig
+        ' 
+        btnConfig.Location = New Point(24, 583)
+        btnConfig.Name = "btnConfig"
+        btnConfig.Size = New Size(294, 46)
+        btnConfig.TabIndex = 5
+        btnConfig.Text = "Config"
+        btnConfig.UseVisualStyleBackColor = True
+        ' 
         ' FormUtama
         ' 
-        AutoScaleDimensions = New SizeF(12F, 32F)
+        AutoScaleDimensions = New SizeF(9F, 24F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1728, 1055)
         Controls.Add(pnlKonten)
@@ -131,4 +142,5 @@ Partial Class FormUtama
     Friend WithEvents btnDataDaftarPasien As Button
     Friend WithEvents pnlKonten As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnConfig As Button
 End Class

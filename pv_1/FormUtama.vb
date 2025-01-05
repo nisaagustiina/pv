@@ -65,4 +65,8 @@
         TampilkanForm(formDataDaftarPasien)
     End Sub
 
+    Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
+        Dim formConfig As New FormConfig()
+        TampilkanForm(formConfig)
+    End Sub
 End Class
