@@ -1,9 +1,8 @@
 .vs/
-.vs/pv_1
 .vscode/
 .idea/
-bin/
-obj/
+pv_1/bin/
+pv_1/obj/
 *.user
 *.userosscache
 *.suo
