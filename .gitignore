@@ -1,0 +1,17 @@
+.vs/
+.vscode/
+.idea/
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+Debug/
+Release/
+*.cab
+*.msi
+*.msm
+*.msp
+*.[Dd]s_store
+Thumbs.db
