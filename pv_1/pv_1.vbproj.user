@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="FormBmi.vb">
+    <Compile Update="FormBMI.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormConfig.vb">
@@ -10,7 +10,10 @@
     <Compile Update="FormCustomDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormDataDaftarPasien.vb">
+    <Compile Update="FormDataPasien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormDataPendaftaran.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormPendaftaranPasien.vb">

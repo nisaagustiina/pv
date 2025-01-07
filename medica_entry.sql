@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 06, 2025 at 10:32 AM
+-- Generation Time: Jan 07, 2025 at 02:03 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -34,6 +34,17 @@ CREATE TABLE `config` (
   `value` varchar(199) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `config`
+--
+
+INSERT INTO `config` (`id`, `group`, `key`, `value`) VALUES
+(1, 'config_antrian', 'kuota', '50'),
+(2, 'config_antrian', 'limit', '24'),
+(3, 'config_antrian', 'sisa_kuota', '50'),
+(4, 'config_antrian', 'last_reset', ''),
+(5, 'config_antrian', 'mr_code', 'MR-{{NO}}');
+
 -- --------------------------------------------------------
 
 --
@@ -43,10 +54,10 @@ CREATE TABLE `config` (
 CREATE TABLE `medical_records` (
   `id` bigint UNSIGNED NOT NULL,
   `patient_id` bigint UNSIGNED NOT NULL,
-  `height` float NOT NULL,
-  `weight` float NOT NULL,
-  `systolic_pressure` int NOT NULL,
-  `diastolic_pressure` int NOT NULL,
+  `height` float DEFAULT NULL,
+  `weight` float DEFAULT NULL,
+  `systolic_pressure` int DEFAULT NULL,
+  `diastolic_pressure` int DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -60,7 +71,7 @@ CREATE TABLE `medical_records` (
 CREATE TABLE `patients` (
   `id` bigint NOT NULL,
   `name` varchar(199) NOT NULL,
-  `mr_no` varchar(199) NOT NULL,
+  `mr_no` varchar(199) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `nik` varchar(199) NOT NULL,
   `gender` enum('M','F') NOT NULL,
   `birth_place` varchar(199) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
@@ -126,7 +137,7 @@ ALTER TABLE `registrations`
 -- AUTO_INCREMENT for table `config`
 --
 ALTER TABLE `config`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `medical_records`

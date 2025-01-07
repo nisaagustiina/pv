@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\pv_1.vbproj": {}
+    "C:\\Users\\nisaa\\Source\\Repos\\pv\\pv_1\\pv_1.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\pv_1.vbproj": {
+    "C:\\Users\\nisaa\\Source\\Repos\\pv\\pv_1\\pv_1.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\pv_1.vbproj",
+        "projectUniqueName": "C:\\Users\\nisaa\\Source\\Repos\\pv\\pv_1\\pv_1.vbproj",
         "projectName": "pv_1",
-        "projectPath": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\pv_1.vbproj",
+        "projectPath": "C:\\Users\\nisaa\\Source\\Repos\\pv\\pv_1\\pv_1.vbproj",
         "packagesPath": "C:\\Users\\nisaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\obj\\",
+        "outputPath": "C:\\Users\\nisaa\\Source\\Repos\\pv\\pv_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nisaa\\AppData\\Roaming\\NuGet\\NuGet.Config",

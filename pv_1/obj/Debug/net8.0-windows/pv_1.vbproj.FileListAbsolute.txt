@@ -44,7 +44,6 @@ C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.runtimeconfig.
 C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.dll
 C:\Users\nisaa\Source\Repos\pv\pv_1\bin\Debug\net8.0-windows\pv_1.pdb
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormBmi.resources
-C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataDaftarPasien.resources
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormPendaftaranPasien.resources
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormTekananDarah.resources
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormUtama.resources
@@ -101,3 +100,5 @@ C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.Assembl
 C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormConfig.resources
 C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormCustomDialog.resources
 C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.Up2Date
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPasien.resources
+C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPendaftaran.resources

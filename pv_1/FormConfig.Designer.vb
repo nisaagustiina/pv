@@ -28,6 +28,8 @@ Partial Class FormConfig
         Limit = New Label()
         Label2 = New Label()
         btnSave = New Button()
+        lblmrcode = New Label()
+        txtMrCode = New TextBox()
         SuspendLayout()
         ' 
         ' txtKuota
@@ -73,18 +75,36 @@ Partial Class FormConfig
         ' 
         ' btnSave
         ' 
-        btnSave.Location = New Point(72, 158)
+        btnSave.Location = New Point(66, 208)
         btnSave.Name = "btnSave"
-        btnSave.Size = New Size(123, 52)
+        btnSave.Size = New Size(114, 34)
         btnSave.TabIndex = 5
         btnSave.Text = "Simpan"
         btnSave.UseVisualStyleBackColor = True
+        ' 
+        ' lblmrcode
+        ' 
+        lblmrcode.AutoSize = True
+        lblmrcode.Location = New Point(66, 155)
+        lblmrcode.Name = "lblmrcode"
+        lblmrcode.Size = New Size(108, 15)
+        lblmrcode.TabIndex = 6
+        lblmrcode.Text = "Kode Rekam Medis"
+        ' 
+        ' txtMrCode
+        ' 
+        txtMrCode.Location = New Point(196, 147)
+        txtMrCode.Name = "txtMrCode"
+        txtMrCode.Size = New Size(100, 23)
+        txtMrCode.TabIndex = 7
         ' 
         ' FormConfig
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(txtMrCode)
+        Controls.Add(lblmrcode)
         Controls.Add(btnSave)
         Controls.Add(Label2)
         Controls.Add(Limit)
@@ -103,4 +123,6 @@ Partial Class FormConfig
     Friend WithEvents Limit As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave As Button
+    Friend WithEvents lblmrcode As Label
+    Friend WithEvents txtMrCode As TextBox
 End Class

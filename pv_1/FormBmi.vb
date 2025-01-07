@@ -1,4 +1,4 @@
-﻿Public Class FormBmi
+﻿Public Class FormBMI
 
     Const UnderweightLimit As Double = 18.5
     Const NormalLimit As Double = 24.9
@@ -58,7 +58,4 @@
         txtHeight.Clear()
     End Sub
 
-    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
-
-    End Sub
 End Class

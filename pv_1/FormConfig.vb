@@ -54,6 +54,7 @@ Public Class FormConfig
             ' Mengambil nilai kuota dan limit dari database
             txtKuota.Text = GetConfigValue("config_antrian", "kuota")
             txtLimit.Text = GetConfigValue("config_antrian", "limit")
+            txtMrCode.Text = GetConfigValue("config_antrian", "mr_code")
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -75,6 +76,8 @@ Public Class FormConfig
             ' Update data
             UpdateConfigValue("config_antrian", "kuota", kuota.ToString())
             UpdateConfigValue("config_antrian", "limit", limitAntrian.ToString())
+            UpdateConfigValue("config_antrian", "sisa_kuota", kuota.ToString())
+            UpdateConfigValue("config_antrian", "mr_code", txtMrCode.Text())
 
             ' Menampilkan pesan setelah berhasil memperbarui data
             MessageBox.Show("Data berhasil diupdate", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -82,4 +85,5 @@ Public Class FormConfig
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
+
 End Class

@@ -10,18 +10,13 @@
             .Add("Nama Pasien", GetType(String))
             .Add("Nomor Rekam Medis", GetType(String))
             .Add("NIK", GetType(String))
+            .Add("Tempat Lahir", GetType(String))
             .Add("Tanggal Lahir", GetType(Date))
             .Add("Jenis Kelamin", GetType(String))
             .Add("Usia", GetType(Integer))
             .Add("Alamat", GetType(String))
             .Add("Nomor Telepon", GetType(String))
-            .Add("Riwayat Penyakit", GetType(String))
-            .Add("Jenis Pendaftaran", GetType(String))
-            .Add("Tipe Pembayaran", GetType(String))
         End With
-
-        'Saat aplikasi pertama kali dijalankan, tampilkan FormDataDaftarPasien
-        'TampilkanForm(New FormDataDaftarPasien())
 
         ' Mengubah warna latar belakang Panel 
         plnNavigasi.BackColor = ColorTranslator.FromHtml("#0D9276")
@@ -60,13 +55,19 @@
         TampilkanForm(formTekanan)
     End Sub
 
-    Private Sub btnDataDaftarPasien_Click(sender As Object, e As EventArgs) Handles btnDataDaftarPasien.Click
-        Dim formDataDaftarPasien As New FormDataDaftarPasien()
+    ' Event untuk tombol navigasi Data Pasien
+    Private Sub btnDataPasien_Click(sender As Object, e As EventArgs) Handles btnDataPasien.Click
+        Dim formDataDaftarPasien As New FormDataPasien()
         TampilkanForm(formDataDaftarPasien)
     End Sub
 
     Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
         Dim formConfig As New FormConfig()
         TampilkanForm(formConfig)
+    End Sub
+
+    Private Sub btnDataPendaftaran_Click(sender As Object, e As EventArgs) Handles btnDataPendaftaran.Click
+        Dim formDataPendaftaran As New FormDataPendaftaran()
+        TampilkanForm(formDataPendaftaran)
     End Sub
 End Class

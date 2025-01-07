@@ -29,8 +29,8 @@ Partial Class FormPendaftaranPasien
         lbTipeBayar = New Label()
         cbJenisPendaftaran = New ComboBox()
         lbJenisDaftar = New Label()
-        txtRiwayatPenyakit = New TextBox()
-        lbRiwayatPenyakit = New Label()
+        txtKeluhan = New TextBox()
+        lbKeluhan = New Label()
         lbNomerTelepon = New Label()
         txtNoTelepon = New TextBox()
         txtAlamat = New TextBox()
@@ -44,9 +44,9 @@ Partial Class FormPendaftaranPasien
         lbTglLahir = New Label()
         txtNIK = New TextBox()
         lbNIK = New Label()
-        txtNamaPasien = New TextBox()
-        lbNamaPasien = New Label()
-        txtNoRekamMedis = New TextBox()
+        txtNama = New TextBox()
+        lbNama = New Label()
+        txtTempatLahir = New TextBox()
         lbNomerRekam = New Label()
         lbPendaftaranPasien = New Label()
         pnlKontenDaftarPasien.SuspendLayout()
@@ -62,8 +62,8 @@ Partial Class FormPendaftaranPasien
         pnlKontenDaftarPasien.Controls.Add(lbTipeBayar)
         pnlKontenDaftarPasien.Controls.Add(cbJenisPendaftaran)
         pnlKontenDaftarPasien.Controls.Add(lbJenisDaftar)
-        pnlKontenDaftarPasien.Controls.Add(txtRiwayatPenyakit)
-        pnlKontenDaftarPasien.Controls.Add(lbRiwayatPenyakit)
+        pnlKontenDaftarPasien.Controls.Add(txtKeluhan)
+        pnlKontenDaftarPasien.Controls.Add(lbKeluhan)
         pnlKontenDaftarPasien.Controls.Add(lbNomerTelepon)
         pnlKontenDaftarPasien.Controls.Add(txtNoTelepon)
         pnlKontenDaftarPasien.Controls.Add(txtAlamat)
@@ -77,9 +77,9 @@ Partial Class FormPendaftaranPasien
         pnlKontenDaftarPasien.Controls.Add(lbTglLahir)
         pnlKontenDaftarPasien.Controls.Add(txtNIK)
         pnlKontenDaftarPasien.Controls.Add(lbNIK)
-        pnlKontenDaftarPasien.Controls.Add(txtNamaPasien)
-        pnlKontenDaftarPasien.Controls.Add(lbNamaPasien)
-        pnlKontenDaftarPasien.Controls.Add(txtNoRekamMedis)
+        pnlKontenDaftarPasien.Controls.Add(txtNama)
+        pnlKontenDaftarPasien.Controls.Add(lbNama)
+        pnlKontenDaftarPasien.Controls.Add(txtTempatLahir)
         pnlKontenDaftarPasien.Controls.Add(lbNomerRekam)
         pnlKontenDaftarPasien.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         pnlKontenDaftarPasien.ForeColor = SystemColors.ControlLightLight
@@ -117,18 +117,18 @@ Partial Class FormPendaftaranPasien
         ' 
         cbTipePembayaran.Anchor = AnchorStyles.None
         cbTipePembayaran.FormattingEnabled = True
-        cbTipePembayaran.Location = New Point(231, 706)
+        cbTipePembayaran.Location = New Point(231, 726)
         cbTipePembayaran.Name = "cbTipePembayaran"
-        cbTipePembayaran.Size = New Size(544, 40)
+        cbTipePembayaran.Size = New Size(544, 32)
         cbTipePembayaran.TabIndex = 100
         ' 
         ' lbTipeBayar
         ' 
         lbTipeBayar.Anchor = AnchorStyles.None
         lbTipeBayar.AutoSize = True
-        lbTipeBayar.Location = New Point(7, 705)
+        lbTipeBayar.Location = New Point(8, 729)
         lbTipeBayar.Name = "lbTipeBayar"
-        lbTipeBayar.Size = New Size(180, 32)
+        lbTipeBayar.Size = New Size(152, 27)
         lbTipeBayar.TabIndex = 99
         lbTipeBayar.Text = "Tipe Pembayaran"
         ' 
@@ -136,39 +136,39 @@ Partial Class FormPendaftaranPasien
         ' 
         cbJenisPendaftaran.Anchor = AnchorStyles.None
         cbJenisPendaftaran.FormattingEnabled = True
-        cbJenisPendaftaran.Location = New Point(231, 643)
+        cbJenisPendaftaran.Location = New Point(231, 671)
         cbJenisPendaftaran.Name = "cbJenisPendaftaran"
-        cbJenisPendaftaran.Size = New Size(544, 40)
+        cbJenisPendaftaran.Size = New Size(544, 32)
         cbJenisPendaftaran.TabIndex = 98
         ' 
         ' lbJenisDaftar
         ' 
         lbJenisDaftar.Anchor = AnchorStyles.None
         lbJenisDaftar.AutoSize = True
-        lbJenisDaftar.Location = New Point(7, 641)
+        lbJenisDaftar.Location = New Point(12, 671)
         lbJenisDaftar.Name = "lbJenisDaftar"
-        lbJenisDaftar.Size = New Size(185, 32)
+        lbJenisDaftar.Size = New Size(155, 27)
         lbJenisDaftar.TabIndex = 97
         lbJenisDaftar.Text = "Jenis Pendaftaran"
         ' 
-        ' txtRiwayatPenyakit
+        ' txtKeluhan
         ' 
-        txtRiwayatPenyakit.Anchor = AnchorStyles.None
-        txtRiwayatPenyakit.Location = New Point(231, 551)
-        txtRiwayatPenyakit.Multiline = True
-        txtRiwayatPenyakit.Name = "txtRiwayatPenyakit"
-        txtRiwayatPenyakit.Size = New Size(544, 62)
-        txtRiwayatPenyakit.TabIndex = 96
+        txtKeluhan.Anchor = AnchorStyles.None
+        txtKeluhan.Location = New Point(231, 562)
+        txtKeluhan.Multiline = True
+        txtKeluhan.Name = "txtKeluhan"
+        txtKeluhan.Size = New Size(544, 80)
+        txtKeluhan.TabIndex = 96
         ' 
-        ' lbRiwayatPenyakit
+        ' lbKeluhan
         ' 
-        lbRiwayatPenyakit.Anchor = AnchorStyles.None
-        lbRiwayatPenyakit.AutoSize = True
-        lbRiwayatPenyakit.Location = New Point(11, 554)
-        lbRiwayatPenyakit.Name = "lbRiwayatPenyakit"
-        lbRiwayatPenyakit.Size = New Size(176, 32)
-        lbRiwayatPenyakit.TabIndex = 95
-        lbRiwayatPenyakit.Text = "Riwayat Penyakit"
+        lbKeluhan.Anchor = AnchorStyles.None
+        lbKeluhan.AutoSize = True
+        lbKeluhan.Location = New Point(12, 565)
+        lbKeluhan.Name = "lbKeluhan"
+        lbKeluhan.Size = New Size(78, 27)
+        lbKeluhan.TabIndex = 95
+        lbKeluhan.Text = "Keluhan"
         ' 
         ' lbNomerTelepon
         ' 
@@ -176,7 +176,7 @@ Partial Class FormPendaftaranPasien
         lbNomerTelepon.AutoSize = True
         lbNomerTelepon.Location = New Point(9, 492)
         lbNomerTelepon.Name = "lbNomerTelepon"
-        lbNomerTelepon.Size = New Size(158, 32)
+        lbNomerTelepon.Size = New Size(134, 27)
         lbNomerTelepon.TabIndex = 94
         lbNomerTelepon.Text = "Nomer Telepon"
         ' 
@@ -204,7 +204,7 @@ Partial Class FormPendaftaranPasien
         lbAlamat.AutoSize = True
         lbAlamat.Location = New Point(9, 403)
         lbAlamat.Name = "lbAlamat"
-        lbAlamat.Size = New Size(80, 32)
+        lbAlamat.Size = New Size(67, 27)
         lbAlamat.TabIndex = 91
         lbAlamat.Text = "Alamat"
         ' 
@@ -214,7 +214,7 @@ Partial Class FormPendaftaranPasien
         lbUsia.AutoSize = True
         lbUsia.Location = New Point(9, 346)
         lbUsia.Name = "lbUsia"
-        lbUsia.Size = New Size(57, 32)
+        lbUsia.Size = New Size(48, 27)
         lbUsia.TabIndex = 90
         lbUsia.Text = "Usia"
         ' 
@@ -234,7 +234,7 @@ Partial Class FormPendaftaranPasien
         rbPerempuan.AutoSize = True
         rbPerempuan.Location = New Point(381, 289)
         rbPerempuan.Name = "rbPerempuan"
-        rbPerempuan.Size = New Size(145, 36)
+        rbPerempuan.Size = New Size(122, 31)
         rbPerempuan.TabIndex = 88
         rbPerempuan.TabStop = True
         rbPerempuan.Text = "Perempuan"
@@ -246,7 +246,7 @@ Partial Class FormPendaftaranPasien
         rbLakiLaki.AutoSize = True
         rbLakiLaki.Location = New Point(231, 289)
         rbLakiLaki.Name = "rbLakiLaki"
-        rbLakiLaki.Size = New Size(119, 36)
+        rbLakiLaki.Size = New Size(100, 31)
         rbLakiLaki.TabIndex = 87
         rbLakiLaki.TabStop = True
         rbLakiLaki.Text = "Laki-Laki"
@@ -258,7 +258,7 @@ Partial Class FormPendaftaranPasien
         lbJenisKelamin.AutoSize = True
         lbJenisKelamin.Location = New Point(8, 288)
         lbJenisKelamin.Name = "lbJenisKelamin"
-        lbJenisKelamin.Size = New Size(145, 32)
+        lbJenisKelamin.Size = New Size(121, 27)
         lbJenisKelamin.TabIndex = 86
         lbJenisKelamin.Text = "Jenis Kelamin"
         ' 
@@ -268,7 +268,7 @@ Partial Class FormPendaftaranPasien
         dtpTanggalLahir.ImeMode = ImeMode.Disable
         dtpTanggalLahir.Location = New Point(231, 230)
         dtpTanggalLahir.Name = "dtpTanggalLahir"
-        dtpTanggalLahir.Size = New Size(544, 39)
+        dtpTanggalLahir.Size = New Size(544, 33)
         dtpTanggalLahir.TabIndex = 85
         ' 
         ' lbTglLahir
@@ -277,7 +277,7 @@ Partial Class FormPendaftaranPasien
         lbTglLahir.AutoSize = True
         lbTglLahir.Location = New Point(5, 230)
         lbTglLahir.Name = "lbTglLahir"
-        lbTglLahir.Size = New Size(143, 32)
+        lbTglLahir.Size = New Size(121, 27)
         lbTglLahir.TabIndex = 84
         lbTglLahir.Text = "Tanggal Lahir"
         ' 
@@ -285,7 +285,7 @@ Partial Class FormPendaftaranPasien
         ' 
         txtNIK.Anchor = AnchorStyles.None
         txtNIK.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtNIK.Location = New Point(231, 176)
+        txtNIK.Location = New Point(231, 118)
         txtNIK.Multiline = True
         txtNIK.Name = "txtNIK"
         txtNIK.Size = New Size(544, 35)
@@ -296,53 +296,53 @@ Partial Class FormPendaftaranPasien
         lbNIK.Anchor = AnchorStyles.None
         lbNIK.AutoSize = True
         lbNIK.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbNIK.Location = New Point(5, 174)
+        lbNIK.Location = New Point(26, 118)
         lbNIK.Name = "lbNIK"
-        lbNIK.Size = New Size(48, 32)
+        lbNIK.Size = New Size(41, 27)
         lbNIK.TabIndex = 82
         lbNIK.Text = "NIK"
         ' 
-        ' txtNamaPasien
+        ' txtNama
         ' 
-        txtNamaPasien.Anchor = AnchorStyles.None
-        txtNamaPasien.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtNamaPasien.Location = New Point(231, 120)
-        txtNamaPasien.Multiline = True
-        txtNamaPasien.Name = "txtNamaPasien"
-        txtNamaPasien.Size = New Size(544, 35)
-        txtNamaPasien.TabIndex = 81
+        txtNama.Anchor = AnchorStyles.None
+        txtNama.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtNama.Location = New Point(231, 51)
+        txtNama.Multiline = True
+        txtNama.Name = "txtNama"
+        txtNama.Size = New Size(544, 35)
+        txtNama.TabIndex = 81
         ' 
-        ' lbNamaPasien
+        ' lbNama
         ' 
-        lbNamaPasien.Anchor = AnchorStyles.None
-        lbNamaPasien.AutoSize = True
-        lbNamaPasien.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbNamaPasien.Location = New Point(5, 118)
-        lbNamaPasien.Name = "lbNamaPasien"
-        lbNamaPasien.Size = New Size(139, 32)
-        lbNamaPasien.TabIndex = 80
-        lbNamaPasien.Text = "Nama Pasien"
+        lbNama.Anchor = AnchorStyles.None
+        lbNama.AutoSize = True
+        lbNama.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbNama.Location = New Point(26, 51)
+        lbNama.Name = "lbNama"
+        lbNama.Size = New Size(59, 27)
+        lbNama.TabIndex = 80
+        lbNama.Text = "Nama"
         ' 
-        ' txtNoRekamMedis
+        ' txtTempatLahir
         ' 
-        txtNoRekamMedis.Anchor = AnchorStyles.None
-        txtNoRekamMedis.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtNoRekamMedis.Location = New Point(231, 70)
-        txtNoRekamMedis.Multiline = True
-        txtNoRekamMedis.Name = "txtNoRekamMedis"
-        txtNoRekamMedis.Size = New Size(544, 35)
-        txtNoRekamMedis.TabIndex = 79
+        txtTempatLahir.Anchor = AnchorStyles.None
+        txtTempatLahir.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtTempatLahir.Location = New Point(231, 176)
+        txtTempatLahir.Multiline = True
+        txtTempatLahir.Name = "txtTempatLahir"
+        txtTempatLahir.Size = New Size(544, 35)
+        txtTempatLahir.TabIndex = 79
         ' 
         ' lbNomerRekam
         ' 
         lbNomerRekam.Anchor = AnchorStyles.None
         lbNomerRekam.AutoSize = True
         lbNomerRekam.Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbNomerRekam.Location = New Point(5, 68)
+        lbNomerRekam.Location = New Point(12, 176)
         lbNomerRekam.Name = "lbNomerRekam"
-        lbNomerRekam.Size = New Size(208, 32)
+        lbNomerRekam.Size = New Size(116, 27)
         lbNomerRekam.TabIndex = 78
-        lbNomerRekam.Text = "Nomer Rekam Medis"
+        lbNomerRekam.Text = "Tempat Lahir"
         ' 
         ' lbPendaftaranPasien
         ' 
@@ -352,13 +352,13 @@ Partial Class FormPendaftaranPasien
         lbPendaftaranPasien.Font = New Font("Sans Serif Collection", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbPendaftaranPasien.Location = New Point(406, 9)
         lbPendaftaranPasien.Name = "lbPendaftaranPasien"
-        lbPendaftaranPasien.Size = New Size(304, 37)
+        lbPendaftaranPasien.Size = New Size(234, 29)
         lbPendaftaranPasien.TabIndex = 103
         lbPendaftaranPasien.Text = "PENDAFTARAN PASIEN"
         ' 
         ' FormPendaftaranPasien
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1050, 932)
         Controls.Add(lbPendaftaranPasien)
@@ -378,8 +378,8 @@ Partial Class FormPendaftaranPasien
     Friend WithEvents lbTipeBayar As Label
     Friend WithEvents cbJenisPendaftaran As ComboBox
     Friend WithEvents lbJenisDaftar As Label
-    Friend WithEvents txtRiwayatPenyakit As TextBox
-    Friend WithEvents lbRiwayatPenyakit As Label
+    Friend WithEvents txtKeluhan As TextBox
+    Friend WithEvents lbKeluhan As Label
     Friend WithEvents lbNomerTelepon As Label
     Friend WithEvents txtNoTelepon As TextBox
     Friend WithEvents txtAlamat As TextBox
@@ -393,9 +393,9 @@ Partial Class FormPendaftaranPasien
     Friend WithEvents lbTglLahir As Label
     Friend WithEvents txtNIK As TextBox
     Friend WithEvents lbNIK As Label
-    Friend WithEvents txtNamaPasien As TextBox
-    Friend WithEvents lbNamaPasien As Label
-    Friend WithEvents txtNoRekamMedis As TextBox
+    Friend WithEvents txtNama As TextBox
+    Friend WithEvents lbNama As Label
+    Friend WithEvents txtTempatLahir As TextBox
     Friend WithEvents lbNomerRekam As Label
     Friend WithEvents lbPendaftaranPasien As Label
 End Class

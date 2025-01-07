@@ -23,22 +23,24 @@ Partial Class FormUtama
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         plnNavigasi = New Panel()
-        PictureBox1 = New PictureBox()
-        btnDataDaftarPasien = New Button()
+        btnDataPendaftaran = New Button()
+        btnConfig = New Button()
+        picLogo = New PictureBox()
+        btnDataPasien = New Button()
         btnTekanan = New Button()
         btnBMI = New Button()
         btnPendaftaran = New Button()
         pnlKonten = New Panel()
-        btnConfig = New Button()
         plnNavigasi.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' plnNavigasi
         ' 
+        plnNavigasi.Controls.Add(btnDataPendaftaran)
         plnNavigasi.Controls.Add(btnConfig)
-        plnNavigasi.Controls.Add(PictureBox1)
-        plnNavigasi.Controls.Add(btnDataDaftarPasien)
+        plnNavigasi.Controls.Add(picLogo)
+        plnNavigasi.Controls.Add(btnDataPasien)
         plnNavigasi.Controls.Add(btnTekanan)
         plnNavigasi.Controls.Add(btnBMI)
         plnNavigasi.Controls.Add(btnPendaftaran)
@@ -49,25 +51,43 @@ Partial Class FormUtama
         plnNavigasi.Size = New Size(346, 1055)
         plnNavigasi.TabIndex = 0
         ' 
-        ' PictureBox1
+        ' btnDataPendaftaran
         ' 
-        PictureBox1.Image = My.Resources.Resources.Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template_removebg_preview1
-        PictureBox1.Location = New Point(8, 12)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(334, 202)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 4
-        PictureBox1.TabStop = False
+        btnDataPendaftaran.Location = New Point(24, 573)
+        btnDataPendaftaran.Name = "btnDataPendaftaran"
+        btnDataPendaftaran.Size = New Size(294, 41)
+        btnDataPendaftaran.TabIndex = 6
+        btnDataPendaftaran.Text = "Data Pendaftaran Pasien"
+        btnDataPendaftaran.UseVisualStyleBackColor = True
         ' 
-        ' btnDataDaftarPasien
+        ' btnConfig
         ' 
-        btnDataDaftarPasien.Location = New Point(24, 508)
-        btnDataDaftarPasien.Margin = New Padding(4, 5, 4, 5)
-        btnDataDaftarPasien.Name = "btnDataDaftarPasien"
-        btnDataDaftarPasien.Size = New Size(294, 46)
-        btnDataDaftarPasien.TabIndex = 3
-        btnDataDaftarPasien.Text = "Data Pasien"
-        btnDataDaftarPasien.UseVisualStyleBackColor = True
+        btnConfig.Location = New Point(24, 638)
+        btnConfig.Name = "btnConfig"
+        btnConfig.Size = New Size(294, 46)
+        btnConfig.TabIndex = 5
+        btnConfig.Text = "Config"
+        btnConfig.UseVisualStyleBackColor = True
+        ' 
+        ' picLogo
+        ' 
+        picLogo.Image = My.Resources.Resources.Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template_removebg_preview1
+        picLogo.Location = New Point(8, 12)
+        picLogo.Name = "picLogo"
+        picLogo.Size = New Size(334, 202)
+        picLogo.SizeMode = PictureBoxSizeMode.Zoom
+        picLogo.TabIndex = 4
+        picLogo.TabStop = False
+        ' 
+        ' btnDataPasien
+        ' 
+        btnDataPasien.Location = New Point(24, 508)
+        btnDataPasien.Margin = New Padding(4, 5, 4, 5)
+        btnDataPasien.Name = "btnDataPasien"
+        btnDataPasien.Size = New Size(294, 46)
+        btnDataPasien.TabIndex = 3
+        btnDataPasien.Text = "Data Pasien"
+        btnDataPasien.UseVisualStyleBackColor = True
         ' 
         ' btnTekanan
         ' 
@@ -108,15 +128,6 @@ Partial Class FormUtama
         pnlKonten.Size = New Size(1382, 1055)
         pnlKonten.TabIndex = 1
         ' 
-        ' btnConfig
-        ' 
-        btnConfig.Location = New Point(24, 583)
-        btnConfig.Name = "btnConfig"
-        btnConfig.Size = New Size(294, 46)
-        btnConfig.TabIndex = 5
-        btnConfig.Text = "Config"
-        btnConfig.UseVisualStyleBackColor = True
-        ' 
         ' FormUtama
         ' 
         AutoScaleDimensions = New SizeF(9F, 24F)
@@ -131,7 +142,7 @@ Partial Class FormUtama
         Text = "Home"
         WindowState = FormWindowState.Maximized
         plnNavigasi.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -139,8 +150,9 @@ Partial Class FormUtama
     Friend WithEvents btnTekanan As Button
     Friend WithEvents btnBMI As Button
     Friend WithEvents btnPendaftaran As Button
-    Friend WithEvents btnDataDaftarPasien As Button
+    Friend WithEvents btnDataPasien As Button
     Friend WithEvents pnlKonten As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents picLogo As PictureBox
     Friend WithEvents btnConfig As Button
+    Friend WithEvents btnDataPendaftaran As Button
 End Class
