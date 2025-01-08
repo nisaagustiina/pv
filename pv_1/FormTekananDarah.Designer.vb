@@ -30,6 +30,8 @@ Partial Class FormTekananDarah
         pnlTekananDarah = New Panel()
         btnReset = New Button()
         lblTitle = New Label()
+        Label1 = New Label()
+        txtMrCode = New TextBox()
         pnlTekananDarah.SuspendLayout()
         SuspendLayout()
         ' 
@@ -38,7 +40,7 @@ Partial Class FormTekananDarah
         lblSistolik.AutoSize = True
         lblSistolik.Font = New Font("Sans Serif Collection", 7.8F)
         lblSistolik.ForeColor = SystemColors.ControlLightLight
-        lblSistolik.Location = New Point(40, 55)
+        lblSistolik.Location = New Point(40, 114)
         lblSistolik.Name = "lblSistolik"
         lblSistolik.Size = New Size(195, 27)
         lblSistolik.TabIndex = 2
@@ -47,7 +49,7 @@ Partial Class FormTekananDarah
         ' txtSistolik
         ' 
         txtSistolik.Font = New Font("Sans Serif Collection", 7.8F)
-        txtSistolik.Location = New Point(269, 55)
+        txtSistolik.Location = New Point(269, 114)
         txtSistolik.Name = "txtSistolik"
         txtSistolik.Size = New Size(202, 33)
         txtSistolik.TabIndex = 3
@@ -57,7 +59,7 @@ Partial Class FormTekananDarah
         lblDiastolik.AutoSize = True
         lblDiastolik.Font = New Font("Sans Serif Collection", 7.8F)
         lblDiastolik.ForeColor = SystemColors.ControlLightLight
-        lblDiastolik.Location = New Point(40, 114)
+        lblDiastolik.Location = New Point(40, 174)
         lblDiastolik.Name = "lblDiastolik"
         lblDiastolik.Size = New Size(206, 27)
         lblDiastolik.TabIndex = 4
@@ -66,7 +68,7 @@ Partial Class FormTekananDarah
         ' txtDiastolik
         ' 
         txtDiastolik.Font = New Font("Sans Serif Collection", 7.8F)
-        txtDiastolik.Location = New Point(269, 111)
+        txtDiastolik.Location = New Point(269, 174)
         txtDiastolik.Name = "txtDiastolik"
         txtDiastolik.Size = New Size(202, 33)
         txtDiastolik.TabIndex = 5
@@ -79,7 +81,7 @@ Partial Class FormTekananDarah
         btnCalculate.FlatStyle = FlatStyle.Flat
         btnCalculate.Font = New Font("Sans Serif Collection", 7.8F)
         btnCalculate.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnCalculate.Location = New Point(269, 175)
+        btnCalculate.Location = New Point(269, 235)
         btnCalculate.Name = "btnCalculate"
         btnCalculate.Size = New Size(82, 35)
         btnCalculate.TabIndex = 6
@@ -89,6 +91,8 @@ Partial Class FormTekananDarah
         ' pnlTekananDarah
         ' 
         pnlTekananDarah.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        pnlTekananDarah.Controls.Add(txtMrCode)
+        pnlTekananDarah.Controls.Add(Label1)
         pnlTekananDarah.Controls.Add(btnReset)
         pnlTekananDarah.Controls.Add(lblSistolik)
         pnlTekananDarah.Controls.Add(txtSistolik)
@@ -108,7 +112,7 @@ Partial Class FormTekananDarah
         btnReset.FlatStyle = FlatStyle.Flat
         btnReset.Font = New Font("Sans Serif Collection", 7.8F)
         btnReset.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnReset.Location = New Point(367, 175)
+        btnReset.Location = New Point(379, 235)
         btnReset.Name = "btnReset"
         btnReset.Size = New Size(75, 35)
         btnReset.TabIndex = 8
@@ -125,6 +129,25 @@ Partial Class FormTekananDarah
         lblTitle.Size = New Size(324, 29)
         lblTitle.TabIndex = 9
         lblTitle.Text = "PERHITUNGAN TEKANAN DARAH"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Sans Serif Collection", 7.8F)
+        Label1.ForeColor = SystemColors.ControlLightLight
+        Label1.Location = New Point(54, 52)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(65, 27)
+        Label1.TabIndex = 9
+        Label1.Text = "No RM"
+        ' 
+        ' txtMrCode
+        ' 
+        txtMrCode.Font = New Font("Sans Serif Collection", 7.8F)
+        txtMrCode.Location = New Point(269, 61)
+        txtMrCode.Name = "txtMrCode"
+        txtMrCode.Size = New Size(202, 33)
+        txtMrCode.TabIndex = 10
         ' 
         ' FormTekananDarah
         ' 
@@ -152,5 +175,7 @@ Partial Class FormTekananDarah
     Friend WithEvents pnlTekananDarah As Panel
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnReset As Button
+    Friend WithEvents txtMrCode As TextBox
+    Friend WithEvents Label1 As Label
 
 End Class
