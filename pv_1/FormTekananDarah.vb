@@ -1,6 +1,7 @@
 ﻿Imports Google.Protobuf.WellKnownTypes
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.Expect.Open.Types.Condition.Types
+Imports Mysqlx.XDevAPI.Common
 
 Public Class FormTekananDarah
     ' Koneksi ke database
@@ -21,8 +22,8 @@ Public Class FormTekananDarah
     Dim diastolik As Integer
     Dim kategori As KategoriTekananDarah
 
-    Private Function GetPasien(mrCode As String) As Integer
-        Dim query As String = "SELECT id FROM patients WHERE `mr_no` = @mrCode"
+    Private Function GetPasien(mrCode As String) As (Integer, String)
+        Dim query As String = "SELECT id, name FROM patients WHERE `mr_no` = @mrCode"
 
         Using cmd As New MySqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@mrCode", mrCode)
@@ -31,7 +32,9 @@ Public Class FormTekananDarah
                 conn.Open()
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
-                        Return reader("id")
+                        Dim id As Integer = reader("id")
+                        Dim name As String = reader("name").ToString()
+                        Return (id, name)
                     End If
                 End Using
             Catch ex As MySqlException
@@ -40,7 +43,7 @@ Public Class FormTekananDarah
                 conn.Close()
             End Try
         End Using
-        Return String.Empty
+        Return (0, String.Empty)
     End Function
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
@@ -50,7 +53,9 @@ Public Class FormTekananDarah
             Exit Sub
         End If
 
-        Dim pasienId = GetPasien(txtMrCode.Text)
+        Dim result = GetPasien(txtMrCode.Text)
+        Dim pasienId As Integer = result.Item1
+        Dim pasienNama As String = result.Item2
 
         If Integer.TryParse(txtSistolik.Text, sistolik) AndAlso Integer.TryParse(txtDiastolik.Text, diastolik) Then
             kategori = TentukanKategoriTekananDarah(sistolik, diastolik)
@@ -72,7 +77,8 @@ Public Class FormTekananDarah
                 End Try
             End Using
 
-            MessageBox.Show("Kategori Tekanan Darah: " & kategori.ToString(), "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Nama: " & pasienNama & Environment.NewLine & "Kategori Tekanan Darah: " & kategori.ToString(), "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Else
             MessageBox.Show("Input nilai sistolik dan diastolik dengan benar.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If

@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{1EF7288B-74A8-4E3E-856B-FDEB94F9DB8C}|pv_1\\pv_1.vbproj|solutionrelative:pv_1\\formtekanandarah.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1EF7288B-74A8-4E3E-856B-FDEB94F9DB8C}|pv_1\\pv_1.vbproj|c:\\users\\nisaa\\source\\repos\\pv\\pv_1\\formconfig.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1EF7288B-74A8-4E3E-856B-FDEB94F9DB8C}|pv_1\\pv_1.vbproj|solutionrelative:pv_1\\formconfig.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1EF7288B-74A8-4E3E-856B-FDEB94F9DB8C}|pv_1\\pv_1.vbproj|c:\\users\\nisaa\\source\\repos\\pv\\pv_1\\formbmi.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{1EF7288B-74A8-4E3E-856B-FDEB94F9DB8C}|pv_1\\pv_1.vbproj|solutionrelative:pv_1\\formbmi.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -74,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FormBMI.vb",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormBMI.vb",
               "RelativeDocumentMoniker": "pv_1\\FormBMI.vb",
@@ -92,14 +88,14 @@
               "RelativeDocumentMoniker": "pv_1\\FormTekananDarah.vb",
               "ToolTip": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormTekananDarah.vb",
               "RelativeToolTip": "pv_1\\FormTekananDarah.vb",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA2wEcAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-08T10:01:49.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "FormTekananDarah.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormTekananDarah.vb",
               "RelativeDocumentMoniker": "pv_1\\FormTekananDarah.vb",
@@ -111,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "FormConfig.Designer.vb",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormConfig.Designer.vb",
               "RelativeDocumentMoniker": "pv_1\\FormConfig.Designer.vb",
@@ -119,12 +115,11 @@
               "RelativeToolTip": "pv_1\\FormConfig.Designer.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-08T03:49:21.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T03:49:21.011Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "FormUtama.vb",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormUtama.vb",
               "RelativeDocumentMoniker": "pv_1\\FormUtama.vb",
@@ -136,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "FormDataPendaftaran.vb",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormDataPendaftaran.vb",
               "RelativeDocumentMoniker": "pv_1\\FormDataPendaftaran.vb",
@@ -148,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "FormCustomDialog.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormCustomDialog.vb",
               "RelativeDocumentMoniker": "pv_1\\FormCustomDialog.vb",
@@ -160,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "FormDataPasien.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormDataPasien.vb",
               "RelativeDocumentMoniker": "pv_1\\FormDataPasien.vb",
@@ -172,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "FormDataPendaftaran.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormDataPendaftaran.vb",
               "RelativeDocumentMoniker": "pv_1\\FormDataPendaftaran.vb",
@@ -184,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "FormUtama.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormUtama.vb",
               "RelativeDocumentMoniker": "pv_1\\FormUtama.vb",
@@ -196,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "FormConfig.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormConfig.vb",
               "RelativeDocumentMoniker": "pv_1\\FormConfig.vb",
@@ -208,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "FormPendaftaranPasien.vb",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormPendaftaranPasien.vb",
               "RelativeDocumentMoniker": "pv_1\\FormPendaftaranPasien.vb",
@@ -220,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "FormPendaftaranPasien.vb [Design]",
               "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormPendaftaranPasien.vb",
               "RelativeDocumentMoniker": "pv_1\\FormPendaftaranPasien.vb",
@@ -229,40 +224,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-07T11:57:46.044Z",
               "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "321061fe-bac2-4b73-a441-841226dbc335",
-        "Display": 0,
-        "X": 681,
-        "Y": 336,
-        "Width": 1244,
-        "Height": 701,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormConfig.vb",
-              "DocumentMoniker": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormConfig.vb",
-              "RelativeDocumentMoniker": "pv_1\\FormConfig.vb",
-              "ToolTip": "C:\\Users\\nisaa\\source\\repos\\pv\\pv_1\\FormConfig.vb",
-              "RelativeToolTip": "pv_1\\FormConfig.vb",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowC8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-08T10:05:20.579Z",
-              "EditorCaption": ""
             }
           ]
         }
