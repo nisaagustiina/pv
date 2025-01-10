@@ -130,7 +130,7 @@ Public Class FormPendaftaranPasien
         Dim randomNumber As Integer = random.Next(10000, 99999) ' Angka acak 5 digit
 
         ' Mengganti placeholder {{No}} dengan angka acak
-        Dim medicalRecordNumber As String = format.Replace("{{NO}", randomNumber.ToString())
+        Dim medicalRecordNumber As String = format.Replace("{{NO}}", randomNumber.ToString())
 
         Return medicalRecordNumber
     End Function
