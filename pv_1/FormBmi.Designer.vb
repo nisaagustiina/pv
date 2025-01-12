@@ -27,7 +27,7 @@ Partial Class FormBmi
         lblHeight = New Label()
         txtHeight = New TextBox()
         lblName = New Label()
-        txtName = New TextBox()
+        txtMRName = New TextBox()
         btnCalculate = New Button()
         pnlBmi = New Panel()
         btnReset = New Button()
@@ -86,17 +86,18 @@ Partial Class FormBmi
         lblName.Name = "lblName"
         lblName.Size = New Size(63, 51)
         lblName.TabIndex = 78
-        lblName.Text = "Nama"
+        lblName.Text = "No RM"
         ' 
-        ' txtName
+        ' txtMRName
         ' 
-        txtName.Font = New Font("Arial", 10.2F)
-        txtName.Location = New Point(281, 59)
-        txtName.Margin = New Padding(3, 4, 3, 4)
-        txtName.Multiline = True
-        txtName.Name = "txtName"
-        txtName.Size = New Size(246, 47)
-        txtName.TabIndex = 5
+
+        txtMRName.Font = New Font("Arial", 10.2F)
+        txtMRName.Location = New Point(281, 59)
+        txtMRName.Margin = New Padding(3, 4, 3, 4)
+        txtMRName.Multiline = True
+        txtMRName.Name = "txtMRName"
+        txtMRName.Size = New Size(246, 47)
+        txtMRName.TabIndex = 5
         ' 
         ' btnCalculate
         ' 
@@ -118,7 +119,7 @@ Partial Class FormBmi
         pnlBmi.Anchor = AnchorStyles.None
         pnlBmi.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
         pnlBmi.Controls.Add(btnReset)
-        pnlBmi.Controls.Add(txtName)
+        pnlBmi.Controls.Add(txtMRName)
         pnlBmi.Controls.Add(txtHeight)
         pnlBmi.Controls.Add(txtWeight)
         pnlBmi.Controls.Add(lblName)
@@ -147,7 +148,6 @@ Partial Class FormBmi
         btnReset.UseVisualStyleBackColor = False
         ' 
         ' lblPerhitunganBMI
-        ' 
         lblPerhitunganBMI.Anchor = AnchorStyles.None
         lblPerhitunganBMI.AutoSize = True
         lblPerhitunganBMI.BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
@@ -160,6 +160,7 @@ Partial Class FormBmi
         lblPerhitunganBMI.TabIndex = 9
         lblPerhitunganBMI.Text = "PERHITUNGAN BMI"
         lblPerhitunganBMI.TextAlign = ContentAlignment.MiddleCenter
+
         ' 
         ' FormBmi
         ' 
@@ -184,7 +185,7 @@ Partial Class FormBmi
     Friend WithEvents lblHeight As Label
     Friend WithEvents txtHeight As TextBox
     Friend WithEvents lblName As Label
-    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtMRName As TextBox
     Friend WithEvents btnCalculate As Button
     Friend WithEvents btnReturn As Button
     Friend WithEvents pnlBmi As Panel
