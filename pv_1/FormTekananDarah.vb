@@ -57,6 +57,11 @@ Public Class FormTekananDarah
         Dim pasienId As Integer = result.Item1
         Dim pasienNama As String = result.Item2
 
+        If pasienId = 0 Then
+            MessageBox.Show("Nomor rekam medis tidak ditemukan. Silakan periksa kembali.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         If Integer.TryParse(txtSistolik.Text, sistolik) AndAlso Integer.TryParse(txtDiastolik.Text, diastolik) Then
             kategori = TentukanKategoriTekananDarah(sistolik, diastolik)
 

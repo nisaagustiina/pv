@@ -27,7 +27,7 @@ Partial Class FormBmi
         lblHeight = New Label()
         txtHeight = New TextBox()
         lblName = New Label()
-        txtName = New TextBox()
+        txtMRName = New TextBox()
         btnCalculate = New Button()
         pnlBmi = New Panel()
         btnReset = New Button()
@@ -42,7 +42,7 @@ Partial Class FormBmi
         lblWeight.ForeColor = SystemColors.ControlLightLight
         lblWeight.Location = New Point(85, 93)
         lblWeight.Name = "lblWeight"
-        lblWeight.Size = New Size(110, 27)
+        lblWeight.Size = New Size(79, 37)
         lblWeight.TabIndex = 0
         lblWeight.Text = "Berat Badan"
         ' 
@@ -51,7 +51,7 @@ Partial Class FormBmi
         txtWeight.Font = New Font("Sans Serif Collection", 9F)
         txtWeight.Location = New Point(246, 93)
         txtWeight.Name = "txtWeight"
-        txtWeight.Size = New Size(216, 37)
+        txtWeight.Size = New Size(216, 39)
         txtWeight.TabIndex = 1
         ' 
         ' lblHeight
@@ -61,7 +61,7 @@ Partial Class FormBmi
         lblHeight.ForeColor = SystemColors.ControlLightLight
         lblHeight.Location = New Point(85, 142)
         lblHeight.Name = "lblHeight"
-        lblHeight.Size = New Size(117, 27)
+        lblHeight.Size = New Size(84, 37)
         lblHeight.TabIndex = 2
         lblHeight.Text = "Tinggi Badan"
         ' 
@@ -70,7 +70,7 @@ Partial Class FormBmi
         txtHeight.Font = New Font("Sans Serif Collection", 9F)
         txtHeight.Location = New Point(246, 142)
         txtHeight.Name = "txtHeight"
-        txtHeight.Size = New Size(216, 37)
+        txtHeight.Size = New Size(216, 39)
         txtHeight.TabIndex = 3
         ' 
         ' lblName
@@ -80,17 +80,17 @@ Partial Class FormBmi
         lblName.ForeColor = SystemColors.ControlLightLight
         lblName.Location = New Point(85, 44)
         lblName.Name = "lblName"
-        lblName.Size = New Size(59, 27)
+        lblName.Size = New Size(50, 37)
         lblName.TabIndex = 78
-        lblName.Text = "Nama"
+        lblName.Text = "No RM"
         ' 
-        ' txtName
+        ' txtMRName
         ' 
-        txtName.Font = New Font("Sans Serif Collection", 9F)
-        txtName.Location = New Point(246, 44)
-        txtName.Name = "txtName"
-        txtName.Size = New Size(216, 37)
-        txtName.TabIndex = 5
+        txtMRName.Font = New Font("Sans Serif Collection", 9F)
+        txtMRName.Location = New Point(246, 44)
+        txtMRName.Name = "txtMRName"
+        txtMRName.Size = New Size(216, 39)
+        txtMRName.TabIndex = 5
         ' 
         ' btnCalculate
         ' 
@@ -111,7 +111,7 @@ Partial Class FormBmi
         ' 
         pnlBmi.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
         pnlBmi.Controls.Add(btnReset)
-        pnlBmi.Controls.Add(txtName)
+        pnlBmi.Controls.Add(txtMRName)
         pnlBmi.Controls.Add(txtHeight)
         pnlBmi.Controls.Add(txtWeight)
         pnlBmi.Controls.Add(lblName)
@@ -147,7 +147,7 @@ Partial Class FormBmi
         lblTitle.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
         lblTitle.Location = New Point(290, 41)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(192, 29)
+        lblTitle.Size = New Size(143, 41)
         lblTitle.TabIndex = 9
         lblTitle.Text = "PERHITUNGAN BMI"
         ' 
@@ -172,7 +172,7 @@ Partial Class FormBmi
     Friend WithEvents lblHeight As Label
     Friend WithEvents txtHeight As TextBox
     Friend WithEvents lblName As Label
-    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtMRName As TextBox
     Friend WithEvents btnCalculate As Button
     Friend WithEvents btnReturn As Button
     Friend WithEvents pnlBmi As Panel
