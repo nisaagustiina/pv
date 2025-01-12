@@ -23,6 +23,7 @@ Partial Class FormDataPasien
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         dgvPasien = New DataGridView()
+        lbDataPasien = New Label()
         CType(dgvPasien, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -33,26 +34,45 @@ Partial Class FormDataPasien
         dgvPasien.BackgroundColor = SystemColors.ControlLightLight
         dgvPasien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvPasien.GridColor = SystemColors.ControlDarkDark
-        dgvPasien.Location = New Point(74, 30)
+        dgvPasien.Location = New Point(51, 102)
         dgvPasien.Margin = New Padding(4, 5, 4, 5)
         dgvPasien.Name = "dgvPasien"
         dgvPasien.RowHeadersWidth = 51
-        dgvPasien.Size = New Size(1064, 654)
+        dgvPasien.Size = New Size(1115, 595)
         dgvPasien.TabIndex = 0
+        ' 
+        ' lbDataPasien
+        ' 
+        lbDataPasien.Anchor = AnchorStyles.Top
+        lbDataPasien.AutoSize = True
+        lbDataPasien.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        lbDataPasien.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        lbDataPasien.Location = New Point(516, 19)
+        lbDataPasien.Margin = New Padding(10)
+        lbDataPasien.Name = "lbDataPasien"
+        lbDataPasien.Size = New Size(161, 27)
+        lbDataPasien.TabIndex = 104
+        lbDataPasien.Text = "DATA PASIEN"
+        lbDataPasien.TextAlign = ContentAlignment.TopCenter
         ' 
         ' FormDataPasien
         ' 
-        AutoScaleDimensions = New SizeF(9F, 24F)
+        AutoScaleDimensions = New SizeF(8F, 44F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1200, 720)
+        BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        ClientSize = New Size(1200, 754)
+        Controls.Add(lbDataPasien)
         Controls.Add(dgvPasien)
         Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Margin = New Padding(4, 5, 4, 5)
         Name = "FormDataPasien"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Data Pasien"
         CType(dgvPasien, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents dgvPasien As DataGridView
+    Friend WithEvents lbDataPasien As Label
 End Class

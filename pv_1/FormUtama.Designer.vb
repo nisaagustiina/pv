@@ -30,13 +30,19 @@ Partial Class FormUtama
         btnTekanan = New Button()
         btnBMI = New Button()
         btnPendaftaran = New Button()
+        TableLayoutPanel1 = New TableLayoutPanel()
+        lbDeskripsi = New Label()
+        Label3 = New Label()
         pnlKonten = New Panel()
         plnNavigasi.SuspendLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
+        TableLayoutPanel1.SuspendLayout()
+        pnlKonten.SuspendLayout()
         SuspendLayout()
         ' 
         ' plnNavigasi
         ' 
+        plnNavigasi.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
         plnNavigasi.Controls.Add(btnDataPendaftaran)
         plnNavigasi.Controls.Add(btnConfig)
         plnNavigasi.Controls.Add(picLogo)
@@ -53,26 +59,38 @@ Partial Class FormUtama
         ' 
         ' btnDataPendaftaran
         ' 
-        btnDataPendaftaran.Location = New Point(24, 573)
+        btnDataPendaftaran.Anchor = AnchorStyles.None
+        btnDataPendaftaran.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnDataPendaftaran.FlatAppearance.BorderSize = 0
+        btnDataPendaftaran.FlatStyle = FlatStyle.Flat
+        btnDataPendaftaran.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnDataPendaftaran.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnDataPendaftaran.Location = New Point(26, 664)
         btnDataPendaftaran.Name = "btnDataPendaftaran"
         btnDataPendaftaran.Size = New Size(294, 41)
         btnDataPendaftaran.TabIndex = 6
         btnDataPendaftaran.Text = "Data Pendaftaran Pasien"
-        btnDataPendaftaran.UseVisualStyleBackColor = True
+        btnDataPendaftaran.UseVisualStyleBackColor = False
         ' 
         ' btnConfig
         ' 
-        btnConfig.Location = New Point(24, 638)
+        btnConfig.Anchor = AnchorStyles.None
+        btnConfig.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnConfig.FlatAppearance.BorderSize = 0
+        btnConfig.FlatStyle = FlatStyle.Flat
+        btnConfig.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnConfig.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnConfig.Location = New Point(26, 732)
         btnConfig.Name = "btnConfig"
         btnConfig.Size = New Size(294, 46)
         btnConfig.TabIndex = 5
         btnConfig.Text = "Config"
-        btnConfig.UseVisualStyleBackColor = True
+        btnConfig.UseVisualStyleBackColor = False
         ' 
         ' picLogo
         ' 
         picLogo.Image = My.Resources.Resources.Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template_removebg_preview1
-        picLogo.Location = New Point(8, 12)
+        picLogo.Location = New Point(8, 9)
         picLogo.Name = "picLogo"
         picLogo.Size = New Size(334, 202)
         picLogo.SizeMode = PictureBoxSizeMode.Zoom
@@ -81,47 +99,114 @@ Partial Class FormUtama
         ' 
         ' btnDataPasien
         ' 
-        btnDataPasien.Location = New Point(24, 508)
+        btnDataPasien.Anchor = AnchorStyles.None
+        btnDataPasien.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnDataPasien.FlatAppearance.BorderSize = 0
+        btnDataPasien.FlatStyle = FlatStyle.Flat
+        btnDataPasien.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnDataPasien.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnDataPasien.Location = New Point(26, 590)
         btnDataPasien.Margin = New Padding(4, 5, 4, 5)
         btnDataPasien.Name = "btnDataPasien"
         btnDataPasien.Size = New Size(294, 46)
         btnDataPasien.TabIndex = 3
         btnDataPasien.Text = "Data Pasien"
-        btnDataPasien.UseVisualStyleBackColor = True
+        btnDataPasien.UseVisualStyleBackColor = False
         ' 
         ' btnTekanan
         ' 
-        btnTekanan.Location = New Point(24, 441)
+        btnTekanan.Anchor = AnchorStyles.None
+        btnTekanan.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnTekanan.FlatAppearance.BorderSize = 0
+        btnTekanan.FlatStyle = FlatStyle.Flat
+        btnTekanan.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnTekanan.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnTekanan.Location = New Point(26, 498)
         btnTekanan.Margin = New Padding(4, 5, 4, 5)
         btnTekanan.Name = "btnTekanan"
-        btnTekanan.Size = New Size(294, 46)
+        btnTekanan.Size = New Size(294, 65)
         btnTekanan.TabIndex = 2
         btnTekanan.Text = "Perhitungan Tekanan Darah "
-        btnTekanan.UseVisualStyleBackColor = True
+        btnTekanan.UseVisualStyleBackColor = False
         ' 
         ' btnBMI
         ' 
-        btnBMI.Location = New Point(24, 375)
+        btnBMI.Anchor = AnchorStyles.None
+        btnBMI.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnBMI.FlatAppearance.BorderSize = 0
+        btnBMI.FlatStyle = FlatStyle.Flat
+        btnBMI.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnBMI.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnBMI.Location = New Point(26, 424)
         btnBMI.Margin = New Padding(4, 5, 4, 5)
         btnBMI.Name = "btnBMI"
         btnBMI.Size = New Size(294, 46)
         btnBMI.TabIndex = 1
         btnBMI.Text = "Perhitungan BMI"
-        btnBMI.UseVisualStyleBackColor = True
+        btnBMI.UseVisualStyleBackColor = False
         ' 
         ' btnPendaftaran
         ' 
-        btnPendaftaran.Location = New Point(24, 308)
+        btnPendaftaran.Anchor = AnchorStyles.None
+        btnPendaftaran.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        btnPendaftaran.FlatAppearance.BorderSize = 0
+        btnPendaftaran.FlatStyle = FlatStyle.Flat
+        btnPendaftaran.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        btnPendaftaran.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnPendaftaran.Location = New Point(26, 353)
         btnPendaftaran.Margin = New Padding(4, 5, 4, 5)
         btnPendaftaran.Name = "btnPendaftaran"
         btnPendaftaran.Size = New Size(294, 46)
         btnPendaftaran.TabIndex = 0
         btnPendaftaran.Text = "Pendaftaran Pasien"
-        btnPendaftaran.UseVisualStyleBackColor = True
+        btnPendaftaran.UseVisualStyleBackColor = False
+        ' 
+        ' TableLayoutPanel1
+        ' 
+        TableLayoutPanel1.ColumnCount = 1
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Absolute, 20F))
+        TableLayoutPanel1.Controls.Add(lbDeskripsi, 0, 1)
+        TableLayoutPanel1.Controls.Add(Label3, 0, 0)
+        TableLayoutPanel1.Dock = DockStyle.Fill
+        TableLayoutPanel1.Location = New Point(0, 0)
+        TableLayoutPanel1.Name = "TableLayoutPanel1"
+        TableLayoutPanel1.RowCount = 2
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 50F))
+        TableLayoutPanel1.Size = New Size(1382, 1055)
+        TableLayoutPanel1.TabIndex = 2
+        ' 
+        ' lbDeskripsi
+        ' 
+        lbDeskripsi.AutoSize = True
+        lbDeskripsi.Dock = DockStyle.Fill
+        lbDeskripsi.Font = New Font("Arial Black", 16.2F, FontStyle.Bold)
+        lbDeskripsi.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        lbDeskripsi.Location = New Point(3, 527)
+        lbDeskripsi.Name = "lbDeskripsi"
+        lbDeskripsi.Size = New Size(1376, 528)
+        lbDeskripsi.TabIndex = 8
+        lbDeskripsi.Text = "Platform Digital untuk Pengelolaan Data Pasien yang Efisien!"
+        lbDeskripsi.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Dock = DockStyle.Fill
+        Label3.Font = New Font("Arial Black", 25.8000011F, FontStyle.Bold)
+        Label3.ForeColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        Label3.Location = New Point(3, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(1376, 527)
+        Label3.TabIndex = 7
+        Label3.Text = "Selamat Datang di MedicaEntry Registration"
+        Label3.TextAlign = ContentAlignment.BottomCenter
         ' 
         ' pnlKonten
         ' 
-        pnlKonten.Dock = DockStyle.Fill
+        pnlKonten.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        pnlKonten.BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        pnlKonten.Controls.Add(TableLayoutPanel1)
         pnlKonten.Location = New Point(346, 0)
         pnlKonten.Margin = New Padding(4, 5, 4, 5)
         pnlKonten.Name = "pnlKonten"
@@ -130,7 +215,7 @@ Partial Class FormUtama
         ' 
         ' FormUtama
         ' 
-        AutoScaleDimensions = New SizeF(9F, 24F)
+        AutoScaleDimensions = New SizeF(8F, 44F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1728, 1055)
         Controls.Add(pnlKonten)
@@ -143,6 +228,9 @@ Partial Class FormUtama
         WindowState = FormWindowState.Maximized
         plnNavigasi.ResumeLayout(False)
         CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
+        TableLayoutPanel1.ResumeLayout(False)
+        TableLayoutPanel1.PerformLayout()
+        pnlKonten.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -151,8 +239,11 @@ Partial Class FormUtama
     Friend WithEvents btnBMI As Button
     Friend WithEvents btnPendaftaran As Button
     Friend WithEvents btnDataPasien As Button
-    Friend WithEvents pnlKonten As Panel
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents btnConfig As Button
     Friend WithEvents btnDataPendaftaran As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents pnlKonten As Panel
+    Friend WithEvents lbDeskripsi As Label
 End Class

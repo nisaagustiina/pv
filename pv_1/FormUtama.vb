@@ -21,27 +21,42 @@
         ' Mengubah warna latar belakang Panel 
         plnNavigasi.BackColor = ColorTranslator.FromHtml("#0D9276")
 
+
+
+
     End Sub
 
-    ' Method untuk menampilkan form di panel konten
-    Private Sub TampilkanForm(form As Form)
+
+
+    ' Method untuk menampilkan form di tengah dan menyesuaikan ukuran panel konten
+    Public Sub TampilkanForm(form As Form)
         ' Bersihkan panel konten sebelum menampilkan form baru
         pnlKonten.Controls.Clear()
 
         ' Atur form sebagai child control dari panel
         form.TopLevel = False
-        form.Dock = DockStyle.Fill
+
+        ' Sesuaikan ukuran form dengan ukuran panel
+        form.Width = pnlKonten.Width - (2)
+        form.Height = pnlKonten.Height - (2)
+
+        ' Hitung posisi tengah form di dalam panel
+        Dim posX As Integer = (pnlKonten.Width - form.Width) \ 2
+        Dim posY As Integer = (pnlKonten.Height - form.Height) \ 2
+        form.Location = New Point(posX, posY)
 
         ' Tambahkan form ke panel dan tampilkan
         pnlKonten.Controls.Add(form)
         form.Show()
     End Sub
 
+
     ' Event untuk tombol navigasi Pendaftaran Pasien
     Private Sub btnPendaftaran_Click(sender As Object, e As EventArgs) Handles btnPendaftaran.Click
-        Dim formPendaftaran As New FormPendaftaranPasien()
-        TampilkanForm(formPendaftaran)
+        Dim formPilihPasien As New FormPilihPasien()
+        TampilkanForm(formPilihPasien)
     End Sub
+
 
     ' Event untuk tombol navigasi Perhitungan BMI
     Private Sub btnBMI_Click(sender As Object, e As EventArgs) Handles btnBMI.Click
@@ -69,5 +84,21 @@
     Private Sub btnDataPendaftaran_Click(sender As Object, e As EventArgs) Handles btnDataPendaftaran.Click
         Dim formDataPendaftaran As New FormDataPendaftaran()
         TampilkanForm(formDataPendaftaran)
+    End Sub
+
+    Private Sub lbSelamatDatang_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lbDeskripsi.Click
+
+    End Sub
+
+    Private Sub lbNamaMedicaEntry_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
     End Sub
 End Class

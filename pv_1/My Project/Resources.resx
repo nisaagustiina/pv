@@ -118,10 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user tambah baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user tambah baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user tambah1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user tambah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user tambah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user tambah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pink_Simple_Creative_And_Professional_Medical_Home_Logo_Design_Template-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon user tambah baru1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user tambah baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon user tambah baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon user tambah baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

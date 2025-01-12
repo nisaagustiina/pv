@@ -58,4 +58,16 @@
         txtHeight.Clear()
     End Sub
 
+
+    Private Sub FormPendaftaranPasien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Label Hitung BMI 
+        lblPerhitunganBMI.Text = "PERHITUNGAN BMI"
+        lblPerhitunganBMI.Font = New Font("Arial", 14, FontStyle.Bold)
+        lblPerhitunganBMI.TextAlign = ContentAlignment.MiddleCenter
+
+    End Sub
+
+    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblPerhitunganBMI.Click
+
+    End Sub
 End Class

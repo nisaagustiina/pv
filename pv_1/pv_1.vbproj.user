@@ -16,7 +16,13 @@
     <Compile Update="FormDataPendaftaran.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormPendaftaranPasien.vb">
+    <Compile Update="FormPendaftaranPasienBaru.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPendaftaranPasienLama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormPilihPasien.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormTekananDarah.vb">

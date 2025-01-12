@@ -100,7 +100,14 @@ Public Class FormTekananDarah
         txtSistolik.Clear()
         txtMrCode.Clear()
     End Sub
-    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        ClearForm()
+    Private Sub FormTekananDarah_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Label Hitung bmi pasien
+        lblPerhitunganTekanan.Text = "PERHITUNGAN TEKANAN DARAH"
+        lblPerhitunganTekanan.Font = New Font("Arial", 14, FontStyle.Bold)
+        lblPerhitunganTekanan.TextAlign = ContentAlignment.MiddleCenter
+
+
     End Sub
+
+
 End Class

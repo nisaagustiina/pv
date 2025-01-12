@@ -16,13 +16,6 @@
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect   ' Pilih seluruh baris
         End With
 
-        ' Ukuran kolom tabel usia dan alamat
-        With dgvPasien
-
-            .Columns(5).Width = 35
-            .Columns(6).Width = 150
-
-        End With
 
         ' Atur warna dan teks header DataGridView
         With dgvPasien.ColumnHeadersDefaultCellStyle
@@ -35,6 +28,13 @@
         ' Contoh untuk menyembunyikan header baris
         dgvPasien.RowHeadersVisible = False
 
+
+        ' Label Data pasien
+        lbDataPasien.Text = "DATA PASIEN"
+        lbDataPasien.Font = New Font("Arial", 14, FontStyle.Bold)
+        lbDataPasien.TextAlign = ContentAlignment.MiddleCenter
+
     End Sub
+
 
 End Class

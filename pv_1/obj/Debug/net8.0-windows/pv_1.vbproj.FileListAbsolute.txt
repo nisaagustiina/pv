@@ -102,3 +102,45 @@ C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormCustomDial
 C:\Users\nisaa\source\repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.Up2Date
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPasien.resources
 C:\Users\nisaa\Source\Repos\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPendaftaran.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\pv_1.exe
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\pv_1.deps.json
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\pv_1.runtimeconfig.json
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\pv_1.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\pv_1.pdb
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.AssemblyReference.cache
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormBMI.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormConfig.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormCustomDialog.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPasien.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormDataPendaftaran.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormTekananDarah.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormUtama.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.Resources.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.GenerateResource.cache
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.AssemblyInfoInputs.cache
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.AssemblyInfo.vb
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.CoreCompileInputs.cache
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.sourcelink.json
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.vbproj.Up2Date
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\refint\pv_1.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.pdb
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.genruntimeconfig.cache
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\ref\pv_1.dll
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormPilihPasien.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormPendaftaranPasienBaru.resources
+C:\Users\sherl\OneDrive\Documents\Universitas Siber Asia - Unsia\SEMESTER 1 2024-2025\08. Pemrograman Visual\Project PV terbaru\pv\pv_1\obj\Debug\net8.0-windows\pv_1.FormPendaftaranPasienLama.resources
