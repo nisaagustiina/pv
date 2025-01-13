@@ -25,19 +25,20 @@ Public Class FormDataPendaftaran
 
             ' Query Data Pendaftaran
             Dim query As String = "
-              SELECT 
-                  r.registration_date, 
-                  p.name, 
-                  p.mr_no, 
-                  r.complaint,
-                  CASE 
-                      WHEN r.payment_type = 0 THEN 'Umum'
-                      WHEN r.payment_type = 1 THEN 'BPJS'
-                      WHEN r.payment_type = 2 THEN 'Lainnya'
-                  END AS payment_type,
-                  r.queue_no
-              FROM registrations r
-              INNER JOIN patients p ON r.patient_id = p.id"
+                SELECT 
+                    r.registration_date, 
+                    p.name, 
+                    p.mr_no, 
+                    r.complaint,
+                    CASE 
+                        WHEN r.payment_type = 0 THEN 'Umum'
+                        WHEN r.payment_type = 1 THEN 'BPJS'
+                        WHEN r.payment_type = 2 THEN 'Lainnya'
+                    END AS payment_type,
+                    r.queue_no
+                FROM registrations r
+                INNER JOIN patients p ON r.patient_id = p.id
+                ORDER BY r.registration_date DESC"
 
             Dim dataAdapter As New MySqlDataAdapter(query, conn)
             ' Mengisi DataTable dengan hasil query
