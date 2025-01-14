@@ -23,6 +23,7 @@ Partial Class FormDataPasien
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         dgvPasien = New DataGridView()
+        Button1 = New Button()
         CType(dgvPasien, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -33,18 +34,28 @@ Partial Class FormDataPasien
         dgvPasien.BackgroundColor = SystemColors.ControlLightLight
         dgvPasien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvPasien.GridColor = SystemColors.ControlDarkDark
-        dgvPasien.Location = New Point(74, 30)
+        dgvPasien.Location = New Point(13, 59)
         dgvPasien.Margin = New Padding(4, 5, 4, 5)
         dgvPasien.Name = "dgvPasien"
         dgvPasien.RowHeadersWidth = 51
-        dgvPasien.Size = New Size(1064, 654)
+        dgvPasien.Size = New Size(1344, 625)
         dgvPasien.TabIndex = 0
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(1173, 12)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(184, 39)
+        Button1.TabIndex = 1
+        Button1.Text = "Download Data Pasien"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' FormDataPasien
         ' 
-        AutoScaleDimensions = New SizeF(9F, 24F)
+        AutoScaleDimensions = New SizeF(6F, 34F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1200, 720)
+        ClientSize = New Size(1370, 720)
+        Controls.Add(Button1)
         Controls.Add(dgvPasien)
         Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Margin = New Padding(4, 5, 4, 5)
@@ -55,4 +66,5 @@ Partial Class FormDataPasien
     End Sub
 
     Friend WithEvents dgvPasien As DataGridView
+    Friend WithEvents Button1 As Button
 End Class

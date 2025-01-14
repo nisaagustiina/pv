@@ -37,16 +37,16 @@ Partial Class FormDataPendaftaran
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(1025, 26)
+        Button1.Location = New Point(983, 32)
         Button1.Name = "Button1"
-        Button1.Size = New Size(113, 31)
+        Button1.Size = New Size(194, 31)
         Button1.TabIndex = 1
-        Button1.Text = "Print"
+        Button1.Text = "Download  Data  Pendaftaran"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' FormDataPendaftaran
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1242, 674)
         Controls.Add(Button1)

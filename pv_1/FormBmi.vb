@@ -66,7 +66,7 @@ Public Class FormBMI
                 height = height / 100
                 bmi = weight / (height * height)
 
-                Dim query As String = "UPDATE medical_records SET height = @height, weight = @height WHERE patient_id = @pasienId"
+                Dim query As String = "UPDATE medical_records SET height = @height, weight = @weight WHERE patient_id = @pasienId"
 
 
                 Using cmd As New MySqlCommand(query, conn)
