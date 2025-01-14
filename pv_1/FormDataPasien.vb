@@ -98,8 +98,7 @@ Public Class FormDataPasien
         "Nomor Rekam Medis",
         "NIK",
         "Jenis Kelamin",
-        "Tempat Lahir",
-        "Tanggal Lahir",
+        "Tempat dan Tanggal Lahir",
         "Usia",
         "Alamat",
         "Nomor Telepon"
@@ -117,7 +116,6 @@ Public Class FormDataPasien
             End If
         Next
     End Sub
-
     Private Sub PrintToPDF(filePath As String)
         Dim printDoc As New PrintDocument()
         Dim printFont As New Font("Arial", 10)
@@ -126,6 +124,8 @@ Public Class FormDataPasien
         Dim pageHeight As Integer
         Dim pageWidth As Integer
 
+
+        ' Mengatur orientasi halaman menjadi landscape
         printDoc.DefaultPageSettings.Landscape = True
         pageHeight = printDoc.DefaultPageSettings.PaperSize.Height
         pageWidth = printDoc.DefaultPageSettings.PaperSize.Width
@@ -188,10 +188,6 @@ Public Class FormDataPasien
         Catch ex As Exception
             MessageBox.Show("Terjadi kesalahan: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-    End Sub
-
-    Private Sub dgvPasien_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPasien.CellContentClick
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

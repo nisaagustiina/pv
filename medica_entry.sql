@@ -32,7 +32,7 @@ CREATE TABLE `config` (
   `group` varchar(199) NOT NULL,
   `key` varchar(199) NOT NULL,
   `value` varchar(199) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Dumping data for table `config`
@@ -60,7 +60,7 @@ CREATE TABLE `medical_records` (
   `diastolic_pressure` int DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -71,17 +71,17 @@ CREATE TABLE `medical_records` (
 CREATE TABLE `patients` (
   `id` bigint NOT NULL,
   `name` varchar(199) NOT NULL,
-  `mr_no` varchar(199) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `mr_no` varchar(199) CHARACTER SET utf8mb4  DEFAULT NULL,
   `nik` varchar(199) NOT NULL,
   `gender` enum('M','F') NOT NULL,
-  `birth_place` varchar(199) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `birth_place` varchar(199) CHARACTER SET utf8mb4  DEFAULT NULL,
   `birth_date` date NOT NULL,
   `age` int NOT NULL,
   `address` text NOT NULL,
   `phone_number` varchar(199) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `registrations` (
   `payment_type` tinyint NOT NULL DEFAULT '1' COMMENT '1=umum, 2=bpjs, 3=lainnya',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Indexes for dumped tables

@@ -28,16 +28,16 @@ Public Class FormDataPendaftaran
                 ' Query Data Pendaftaran
                 Dim query As String = "
                   SELECT 
-                      r.registration_date, 
-                      p.name, 
-                      p.mr_no, 
-                      r.complaint,
+                      r.registration_date AS 'Tanggal Registrasi', 
+                      p.name AS 'Nama Pasien', 
+                      p.mr_no AS 'No Rekam Medis', 
+                      r.complaint AS 'Keluhan',
                       CASE 
                           WHEN r.payment_type = 0 THEN 'Umum'
                           WHEN r.payment_type = 1 THEN 'BPJS'
                           WHEN r.payment_type = 2 THEN 'Lainnya'
                       END AS payment_type,
-                      r.queue_no
+                      r.queue_no AS 'Nomor Antrian'
                   FROM registrations r
                   INNER JOIN patients p ON r.patient_id = p.id"
 
