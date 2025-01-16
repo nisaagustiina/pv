@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Globalization
 
 Public Class FormPendaftaranPasienBaru
     ' Koneksi ke database
@@ -37,8 +38,6 @@ Public Class FormPendaftaranPasienBaru
         lbPendaftaranPasienBaru.Font = New Font("Arial", 14, FontStyle.Bold)
         lbPendaftaranPasienBaru.TextAlign = ContentAlignment.MiddleCenter
 
-
-
         ' Mengatur posisi panel agar berada di tengah form
         pnlKontenDaftarPasien.Left = (Me.ClientSize.Width - pnlKontenDaftarPasien.Width) / 2
         pnlKontenDaftarPasien.Top = (Me.ClientSize.Height - pnlKontenDaftarPasien.Height) / 2
@@ -59,7 +58,9 @@ Public Class FormPendaftaranPasienBaru
         btnHapus.ForeColor = ColorTranslator.FromHtml("#FFF6E9")
         btnHapus.FlatAppearance.BorderSize = 0  ' Menghilangkan border
 
-
+        'Set tanggal pendaftaran secara otomatis ke TextBox
+        Dim tanggalSekarang As String = DateTime.Now.ToString("dddd, dd MMMM yyyy", New CultureInfo("id-ID"))
+        txtTanggalDaftar.Text = tanggalSekarang
 
 
         kuota = CInt(GetConfigValue("config_antrian", "kuota"))

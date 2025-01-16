@@ -65,9 +65,9 @@ Partial Class FormUtama
         btnDataPendaftaran.FlatStyle = FlatStyle.Flat
         btnDataPendaftaran.Font = New Font("Arial", 13.8F, FontStyle.Bold)
         btnDataPendaftaran.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnDataPendaftaran.Location = New Point(26, 664)
+        btnDataPendaftaran.Location = New Point(26, 661)
         btnDataPendaftaran.Name = "btnDataPendaftaran"
-        btnDataPendaftaran.Size = New Size(294, 41)
+        btnDataPendaftaran.Size = New Size(294, 71)
         btnDataPendaftaran.TabIndex = 6
         btnDataPendaftaran.Text = "Data Pendaftaran Pasien"
         btnDataPendaftaran.UseVisualStyleBackColor = False
@@ -80,7 +80,7 @@ Partial Class FormUtama
         btnConfig.FlatStyle = FlatStyle.Flat
         btnConfig.Font = New Font("Arial", 13.8F, FontStyle.Bold)
         btnConfig.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnConfig.Location = New Point(26, 732)
+        btnConfig.Location = New Point(26, 759)
         btnConfig.Name = "btnConfig"
         btnConfig.Size = New Size(294, 46)
         btnConfig.TabIndex = 5

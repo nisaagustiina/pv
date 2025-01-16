@@ -101,6 +101,7 @@ Partial Class FormPendaftaranPasienBaru
         txtTanggalDaftar.Location = New Point(291, 35)
         txtTanggalDaftar.Multiline = True
         txtTanggalDaftar.Name = "txtTanggalDaftar"
+        txtTanggalDaftar.ReadOnly = True
         txtTanggalDaftar.Size = New Size(544, 35)
         txtTanggalDaftar.TabIndex = 106
         ' 
