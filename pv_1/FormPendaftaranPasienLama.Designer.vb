@@ -62,7 +62,7 @@ Partial Class FormPendaftaranPasienLama
         lbPendaftaranPasienLama.AutoSize = True
         lbPendaftaranPasienLama.Font = New Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lbPendaftaranPasienLama.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
-        lbPendaftaranPasienLama.Location = New Point(393, 19)
+        lbPendaftaranPasienLama.Location = New Point(376, 26)
         lbPendaftaranPasienLama.Margin = New Padding(10)
         lbPendaftaranPasienLama.Name = "lbPendaftaranPasienLama"
         lbPendaftaranPasienLama.Size = New Size(349, 27)
@@ -143,6 +143,7 @@ Partial Class FormPendaftaranPasienLama
         btnHapus.Font = New Font("Arial", 10.2F, FontStyle.Bold)
         btnHapus.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
         btnHapus.Location = New Point(543, 907)
+        btnHapus.Margin = New Padding(3, 3, 3, 20)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(137, 52)
         btnHapus.TabIndex = 104
@@ -157,6 +158,7 @@ Partial Class FormPendaftaranPasienLama
         btnSimpan.Font = New Font("Arial", 10.2F, FontStyle.Bold)
         btnSimpan.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
         btnSimpan.Location = New Point(355, 907)
+        btnSimpan.Margin = New Padding(3, 3, 3, 20)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(137, 52)
         btnSimpan.TabIndex = 103

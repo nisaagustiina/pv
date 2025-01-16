@@ -67,7 +67,7 @@ Partial Class FormUtama
         btnDataPendaftaran.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
         btnDataPendaftaran.Location = New Point(26, 661)
         btnDataPendaftaran.Name = "btnDataPendaftaran"
-        btnDataPendaftaran.Size = New Size(294, 71)
+        btnDataPendaftaran.Size = New Size(294, 80)
         btnDataPendaftaran.TabIndex = 6
         btnDataPendaftaran.Text = "Data Pendaftaran Pasien"
         btnDataPendaftaran.UseVisualStyleBackColor = False
@@ -82,7 +82,7 @@ Partial Class FormUtama
         btnConfig.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
         btnConfig.Location = New Point(26, 759)
         btnConfig.Name = "btnConfig"
-        btnConfig.Size = New Size(294, 46)
+        btnConfig.Size = New Size(294, 55)
         btnConfig.TabIndex = 5
         btnConfig.Text = "Config"
         btnConfig.UseVisualStyleBackColor = False
@@ -108,7 +108,7 @@ Partial Class FormUtama
         btnDataPasien.Location = New Point(26, 590)
         btnDataPasien.Margin = New Padding(4, 5, 4, 5)
         btnDataPasien.Name = "btnDataPasien"
-        btnDataPasien.Size = New Size(294, 46)
+        btnDataPasien.Size = New Size(294, 55)
         btnDataPasien.TabIndex = 3
         btnDataPasien.Text = "Data Pasien"
         btnDataPasien.UseVisualStyleBackColor = False
@@ -124,7 +124,7 @@ Partial Class FormUtama
         btnTekanan.Location = New Point(26, 498)
         btnTekanan.Margin = New Padding(4, 5, 4, 5)
         btnTekanan.Name = "btnTekanan"
-        btnTekanan.Size = New Size(294, 65)
+        btnTekanan.Size = New Size(294, 70)
         btnTekanan.TabIndex = 2
         btnTekanan.Text = "Perhitungan Tekanan Darah "
         btnTekanan.UseVisualStyleBackColor = False
@@ -140,7 +140,7 @@ Partial Class FormUtama
         btnBMI.Location = New Point(26, 424)
         btnBMI.Margin = New Padding(4, 5, 4, 5)
         btnBMI.Name = "btnBMI"
-        btnBMI.Size = New Size(294, 46)
+        btnBMI.Size = New Size(294, 55)
         btnBMI.TabIndex = 1
         btnBMI.Text = "Perhitungan BMI"
         btnBMI.UseVisualStyleBackColor = False
@@ -156,7 +156,7 @@ Partial Class FormUtama
         btnPendaftaran.Location = New Point(26, 353)
         btnPendaftaran.Margin = New Padding(4, 5, 4, 5)
         btnPendaftaran.Name = "btnPendaftaran"
-        btnPendaftaran.Size = New Size(294, 46)
+        btnPendaftaran.Size = New Size(294, 55)
         btnPendaftaran.TabIndex = 0
         btnPendaftaran.Text = "Pendaftaran Pasien"
         btnPendaftaran.UseVisualStyleBackColor = False

@@ -29,17 +29,20 @@ Partial Class FormCustomDialog
         ' 
         ' lblPesan
         ' 
-        lblPesan.AutoSize = True
-        lblPesan.Location = New Point(12, 21)
+        lblPesan.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lblPesan.Font = New Font("Arial", 10.2F)
+        lblPesan.Location = New Point(65, 27)
         lblPesan.Name = "lblPesan"
-        lblPesan.Size = New Size(261, 20)
+        lblPesan.Size = New Size(288, 19)
         lblPesan.TabIndex = 0
         lblPesan.Text = "Apakah Anda yakin ingin menghapus?"
         lblPesan.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' btnYes
         ' 
-        btnYes.Location = New Point(37, 65)
+        btnYes.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left
+        btnYes.Font = New Font("Arial", 10.2F)
+        btnYes.Location = New Point(80, 77)
         btnYes.Name = "btnYes"
         btnYes.Size = New Size(94, 29)
         btnYes.TabIndex = 1
@@ -48,7 +51,9 @@ Partial Class FormCustomDialog
         ' 
         ' btnNo
         ' 
-        btnNo.Location = New Point(156, 65)
+        btnNo.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        btnNo.Font = New Font("Arial", 10.2F)
+        btnNo.Location = New Point(237, 77)
         btnNo.Name = "btnNo"
         btnNo.Size = New Size(94, 29)
         btnNo.TabIndex = 2
@@ -57,19 +62,20 @@ Partial Class FormCustomDialog
         ' 
         ' FormCustomDialog
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(299, 110)
+        AutoSize = True
+        BackColor = SystemColors.ControlLightLight
+        ClientSize = New Size(402, 153)
         ControlBox = False
         Controls.Add(btnNo)
         Controls.Add(btnYes)
         Controls.Add(lblPesan)
         FormBorderStyle = FormBorderStyle.FixedDialog
         Name = "FormCustomDialog"
-        StartPosition = FormStartPosition.CenterScreen
-        Text = "FormCustomDialog"
+        StartPosition = FormStartPosition.CenterParent
+        Text = "Form Custom Dialog"
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents lblPesan As Label

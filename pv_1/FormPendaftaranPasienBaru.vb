@@ -268,8 +268,11 @@ Public Class FormPendaftaranPasienBaru
         dtpTanggalLahir.Value = DateTime.Now
     End Sub
 
+
+    ' Custom dialog 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        ' Custom dialog untuk konfirmasi
+
+        'Custom dialog untuk konfirmasi
         Dim dialog As New FormCustomDialog()
         dialog.Pesan = "Apakah Anda yakin ingin menghapus data inputan?"
         Dim result As DialogResult = dialog.ShowDialog()

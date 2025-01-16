@@ -3,6 +3,7 @@
     ' Properti untuk menerima pesan dari form utama
     Public Property Pesan As String
 
+
     Private Sub FormCustomDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Tampilkan pesan di Label saat form dimuat
         lblPesan.Text = Pesan
@@ -20,7 +21,5 @@
         Me.Close()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPesan.Click
 
-    End Sub
 End Class
