@@ -24,12 +24,13 @@ Partial Class FormPendaftaranPasienLama
     Private Sub InitializeComponent()
         lbPendaftaranPasienLama = New Label()
         pnlKontenDaftarPasien = New Panel()
+        lbTempatLahir = New Label()
+        txtNamaPasien = New TextBox()
+        lbNamaPasien = New Label()
         btnCariNomerRekamMedis = New Button()
-        TextBox1 = New TextBox()
+        txtbNomerRekamMedis = New TextBox()
         btnHapus = New Button()
         btnSimpan = New Button()
-        Label1 = New Label()
-        cbJenisPendaftaran = New ComboBox()
         cbTipePembayaran = New ComboBox()
         lbTipeBayar = New Label()
         txtKeluhan = New TextBox()
@@ -48,11 +49,8 @@ Partial Class FormPendaftaranPasienLama
         txtNIK = New TextBox()
         lbNIK = New Label()
         txtTempatLahir = New TextBox()
-        lbNomerRekam = New Label()
         txtTanggalDaftar = New TextBox()
         lbTanggalRegister = New Label()
-        txtNama = New TextBox()
-        lbNama = New Label()
         pnlKontenDaftarPasien.SuspendLayout()
         SuspendLayout()
         ' 
@@ -75,12 +73,13 @@ Partial Class FormPendaftaranPasienLama
         pnlKontenDaftarPasien.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         pnlKontenDaftarPasien.AutoSize = True
         pnlKontenDaftarPasien.BackColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        pnlKontenDaftarPasien.Controls.Add(lbTempatLahir)
+        pnlKontenDaftarPasien.Controls.Add(txtNamaPasien)
+        pnlKontenDaftarPasien.Controls.Add(lbNamaPasien)
         pnlKontenDaftarPasien.Controls.Add(btnCariNomerRekamMedis)
-        pnlKontenDaftarPasien.Controls.Add(TextBox1)
+        pnlKontenDaftarPasien.Controls.Add(txtbNomerRekamMedis)
         pnlKontenDaftarPasien.Controls.Add(btnHapus)
         pnlKontenDaftarPasien.Controls.Add(btnSimpan)
-        pnlKontenDaftarPasien.Controls.Add(Label1)
-        pnlKontenDaftarPasien.Controls.Add(cbJenisPendaftaran)
         pnlKontenDaftarPasien.Controls.Add(cbTipePembayaran)
         pnlKontenDaftarPasien.Controls.Add(lbTipeBayar)
         pnlKontenDaftarPasien.Controls.Add(txtKeluhan)
@@ -99,11 +98,8 @@ Partial Class FormPendaftaranPasienLama
         pnlKontenDaftarPasien.Controls.Add(txtNIK)
         pnlKontenDaftarPasien.Controls.Add(lbNIK)
         pnlKontenDaftarPasien.Controls.Add(txtTempatLahir)
-        pnlKontenDaftarPasien.Controls.Add(lbNomerRekam)
         pnlKontenDaftarPasien.Controls.Add(txtTanggalDaftar)
         pnlKontenDaftarPasien.Controls.Add(lbTanggalRegister)
-        pnlKontenDaftarPasien.Controls.Add(txtNama)
-        pnlKontenDaftarPasien.Controls.Add(lbNama)
         pnlKontenDaftarPasien.Font = New Font("Sans Serif Collection", 9F)
         pnlKontenDaftarPasien.ForeColor = SystemColors.Control
         pnlKontenDaftarPasien.Location = New Point(62, 64)
@@ -111,6 +107,38 @@ Partial Class FormPendaftaranPasienLama
         pnlKontenDaftarPasien.Name = "pnlKontenDaftarPasien"
         pnlKontenDaftarPasien.Size = New Size(926, 979)
         pnlKontenDaftarPasien.TabIndex = 0
+        ' 
+        ' lbTempatLahir
+        ' 
+        lbTempatLahir.Anchor = AnchorStyles.None
+        lbTempatLahir.AutoSize = True
+        lbTempatLahir.Location = New Point(69, 259)
+        lbTempatLahir.Name = "lbTempatLahir"
+        lbTempatLahir.Size = New Size(106, 51)
+        lbTempatLahir.TabIndex = 136
+        lbTempatLahir.Text = "Tempat lahir"
+        ' 
+        ' txtNamaPasien
+        ' 
+        txtNamaPasien.Anchor = AnchorStyles.None
+        txtNamaPasien.Enabled = False
+        txtNamaPasien.Font = New Font("Arial", 10.2F)
+        txtNamaPasien.Location = New Point(291, 151)
+        txtNamaPasien.Multiline = True
+        txtNamaPasien.Name = "txtNamaPasien"
+        txtNamaPasien.Size = New Size(544, 35)
+        txtNamaPasien.TabIndex = 135
+        ' 
+        ' lbNamaPasien
+        ' 
+        lbNamaPasien.Anchor = AnchorStyles.None
+        lbNamaPasien.AutoSize = True
+        lbNamaPasien.Font = New Font("Sans Serif Collection", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbNamaPasien.Location = New Point(69, 154)
+        lbNamaPasien.Name = "lbNamaPasien"
+        lbNamaPasien.Size = New Size(110, 51)
+        lbNamaPasien.TabIndex = 134
+        lbNamaPasien.Text = "Nama Pasien"
         ' 
         ' btnCariNomerRekamMedis
         ' 
@@ -126,15 +154,15 @@ Partial Class FormPendaftaranPasienLama
         btnCariNomerRekamMedis.Text = "CARI"
         btnCariNomerRekamMedis.UseVisualStyleBackColor = False
         ' 
-        ' TextBox1
+        ' txtbNomerRekamMedis
         ' 
-        TextBox1.Anchor = AnchorStyles.None
-        TextBox1.Font = New Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(73, 25)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(646, 45)
-        TextBox1.TabIndex = 132
+        txtbNomerRekamMedis.Anchor = AnchorStyles.None
+        txtbNomerRekamMedis.Font = New Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtbNomerRekamMedis.Location = New Point(73, 25)
+        txtbNomerRekamMedis.Multiline = True
+        txtbNomerRekamMedis.Name = "txtbNomerRekamMedis"
+        txtbNomerRekamMedis.Size = New Size(646, 45)
+        txtbNomerRekamMedis.TabIndex = 132
         ' 
         ' btnHapus
         ' 
@@ -142,7 +170,7 @@ Partial Class FormPendaftaranPasienLama
         btnHapus.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
         btnHapus.Font = New Font("Arial", 10.2F, FontStyle.Bold)
         btnHapus.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnHapus.Location = New Point(543, 907)
+        btnHapus.Location = New Point(582, 868)
         btnHapus.Margin = New Padding(3, 3, 3, 20)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(137, 52)
@@ -157,7 +185,7 @@ Partial Class FormPendaftaranPasienLama
         btnSimpan.BackgroundImageLayout = ImageLayout.None
         btnSimpan.Font = New Font("Arial", 10.2F, FontStyle.Bold)
         btnSimpan.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
-        btnSimpan.Location = New Point(355, 907)
+        btnSimpan.Location = New Point(394, 868)
         btnSimpan.Margin = New Padding(3, 3, 3, 20)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(137, 52)
@@ -165,41 +193,21 @@ Partial Class FormPendaftaranPasienLama
         btnSimpan.Text = "SIMPAN"
         btnSimpan.UseVisualStyleBackColor = False
         ' 
-        ' Label1
-        ' 
-        Label1.Anchor = AnchorStyles.None
-        Label1.AutoSize = True
-        Label1.Location = New Point(73, 747)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(140, 51)
-        Label1.TabIndex = 131
-        Label1.Text = "Jenis Pendaftaran"
-        ' 
-        ' cbJenisPendaftaran
-        ' 
-        cbJenisPendaftaran.Anchor = AnchorStyles.None
-        cbJenisPendaftaran.Font = New Font("Sans Serif Collection", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        cbJenisPendaftaran.FormattingEnabled = True
-        cbJenisPendaftaran.Location = New Point(291, 744)
-        cbJenisPendaftaran.Name = "cbJenisPendaftaran"
-        cbJenisPendaftaran.Size = New Size(544, 66)
-        cbJenisPendaftaran.TabIndex = 130
-        ' 
         ' cbTipePembayaran
         ' 
         cbTipePembayaran.Anchor = AnchorStyles.None
-        cbTipePembayaran.Font = New Font("Sans Serif Collection", 10.1999989F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cbTipePembayaran.Font = New Font("Sans Serif Collection", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cbTipePembayaran.FormattingEnabled = True
-        cbTipePembayaran.Location = New Point(291, 829)
+        cbTipePembayaran.Location = New Point(291, 757)
         cbTipePembayaran.Name = "cbTipePembayaran"
-        cbTipePembayaran.Size = New Size(544, 66)
+        cbTipePembayaran.Size = New Size(544, 59)
         cbTipePembayaran.TabIndex = 129
         ' 
         ' lbTipeBayar
         ' 
         lbTipeBayar.Anchor = AnchorStyles.None
         lbTipeBayar.AutoSize = True
-        lbTipeBayar.Location = New Point(73, 829)
+        lbTipeBayar.Location = New Point(73, 757)
         lbTipeBayar.Name = "lbTipeBayar"
         lbTipeBayar.Size = New Size(140, 51)
         lbTipeBayar.TabIndex = 128
@@ -209,7 +217,7 @@ Partial Class FormPendaftaranPasienLama
         ' 
         txtKeluhan.Anchor = AnchorStyles.None
         txtKeluhan.Font = New Font("Arial", 10.2F)
-        txtKeluhan.Location = New Point(291, 644)
+        txtKeluhan.Location = New Point(291, 649)
         txtKeluhan.Multiline = True
         txtKeluhan.Name = "txtKeluhan"
         txtKeluhan.Size = New Size(544, 80)
@@ -219,7 +227,7 @@ Partial Class FormPendaftaranPasienLama
         ' 
         lbKeluhan.Anchor = AnchorStyles.None
         lbKeluhan.AutoSize = True
-        lbKeluhan.Location = New Point(73, 647)
+        lbKeluhan.Location = New Point(69, 649)
         lbKeluhan.Name = "lbKeluhan"
         lbKeluhan.Size = New Size(78, 51)
         lbKeluhan.TabIndex = 126
@@ -238,6 +246,7 @@ Partial Class FormPendaftaranPasienLama
         ' txtNoTelepon
         ' 
         txtNoTelepon.Anchor = AnchorStyles.None
+        txtNoTelepon.Enabled = False
         txtNoTelepon.Font = New Font("Arial", 10.2F)
         txtNoTelepon.Location = New Point(291, 587)
         txtNoTelepon.Multiline = True
@@ -249,6 +258,7 @@ Partial Class FormPendaftaranPasienLama
         ' txtAlamat
         ' 
         txtAlamat.Anchor = AnchorStyles.None
+        txtAlamat.Enabled = False
         txtAlamat.Font = New Font("Arial", 10.2F)
         txtAlamat.Location = New Point(291, 496)
         txtAlamat.Multiline = True
@@ -280,6 +290,7 @@ Partial Class FormPendaftaranPasienLama
         ' txtUsia
         ' 
         txtUsia.Anchor = AnchorStyles.None
+        txtUsia.Enabled = False
         txtUsia.Font = New Font("Arial", 10.2F)
         txtUsia.Location = New Point(291, 440)
         txtUsia.Multiline = True
@@ -292,6 +303,7 @@ Partial Class FormPendaftaranPasienLama
         ' 
         rbPerempuan.Anchor = AnchorStyles.None
         rbPerempuan.AutoSize = True
+        rbPerempuan.Enabled = False
         rbPerempuan.Font = New Font("Arial", 10.2F)
         rbPerempuan.Location = New Point(441, 389)
         rbPerempuan.Name = "rbPerempuan"
@@ -305,6 +317,7 @@ Partial Class FormPendaftaranPasienLama
         ' 
         rbLakiLaki.Anchor = AnchorStyles.None
         rbLakiLaki.AutoSize = True
+        rbLakiLaki.Enabled = False
         rbLakiLaki.Font = New Font("Arial", 10.2F)
         rbLakiLaki.Location = New Point(291, 389)
         rbLakiLaki.Name = "rbLakiLaki"
@@ -348,6 +361,7 @@ Partial Class FormPendaftaranPasienLama
         ' txtNIK
         ' 
         txtNIK.Anchor = AnchorStyles.None
+        txtNIK.Enabled = False
         txtNIK.Font = New Font("Arial", 10.2F)
         txtNIK.Location = New Point(291, 208)
         txtNIK.Multiline = True
@@ -370,6 +384,7 @@ Partial Class FormPendaftaranPasienLama
         ' txtTempatLahir
         ' 
         txtTempatLahir.Anchor = AnchorStyles.None
+        txtTempatLahir.Enabled = False
         txtTempatLahir.Font = New Font("Arial", 10.2F)
         txtTempatLahir.Location = New Point(291, 267)
         txtTempatLahir.Multiline = True
@@ -378,20 +393,10 @@ Partial Class FormPendaftaranPasienLama
         txtTempatLahir.Size = New Size(544, 35)
         txtTempatLahir.TabIndex = 112
         ' 
-        ' lbNomerRekam
-        ' 
-        lbNomerRekam.Anchor = AnchorStyles.None
-        lbNomerRekam.AutoSize = True
-        lbNomerRekam.Font = New Font("Sans Serif Collection", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbNomerRekam.Location = New Point(69, 258)
-        lbNomerRekam.Name = "lbNomerRekam"
-        lbNomerRekam.Size = New Size(110, 51)
-        lbNomerRekam.TabIndex = 111
-        lbNomerRekam.Text = "Tempat Lahir"
-        ' 
         ' txtTanggalDaftar
         ' 
         txtTanggalDaftar.Anchor = AnchorStyles.None
+        txtTanggalDaftar.Enabled = False
         txtTanggalDaftar.Font = New Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtTanggalDaftar.Location = New Point(291, 97)
         txtTanggalDaftar.Multiline = True
@@ -410,28 +415,6 @@ Partial Class FormPendaftaranPasienLama
         lbTanggalRegister.Size = New Size(162, 51)
         lbTanggalRegister.TabIndex = 109
         lbTanggalRegister.Text = "Tanggal Pendaftaran"
-        ' 
-        ' txtNama
-        ' 
-        txtNama.Anchor = AnchorStyles.None
-        txtNama.Font = New Font("Arial", 10.2F)
-        txtNama.Location = New Point(291, 152)
-        txtNama.Multiline = True
-        txtNama.Name = "txtNama"
-        txtNama.ReadOnly = True
-        txtNama.Size = New Size(544, 35)
-        txtNama.TabIndex = 108
-        ' 
-        ' lbNama
-        ' 
-        lbNama.Anchor = AnchorStyles.None
-        lbNama.AutoSize = True
-        lbNama.Font = New Font("Sans Serif Collection", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbNama.Location = New Point(69, 148)
-        lbNama.Name = "lbNama"
-        lbNama.Size = New Size(63, 51)
-        lbNama.TabIndex = 107
-        lbNama.Text = "Nama"
         ' 
         ' FormPendaftaranPasienLama
         ' 
@@ -456,8 +439,8 @@ Partial Class FormPendaftaranPasienLama
     Friend WithEvents pnlKontenDaftarPasien As Panel
     Friend WithEvents txtTanggalDaftar As TextBox
     Friend WithEvents lbTanggalRegister As Label
-    Friend WithEvents txtNama As TextBox
-    Friend WithEvents lbNama As Label
+    Friend WithEvents txtNamaPasien As TextBox
+    Friend WithEvents lbNamaPasien As Label
     Friend WithEvents dtpTanggalLahir As DateTimePicker
     Friend WithEvents lbTglLahir As Label
     Friend WithEvents txtNIK As TextBox
@@ -467,8 +450,6 @@ Partial Class FormPendaftaranPasienLama
     Friend WithEvents rbPerempuan As RadioButton
     Friend WithEvents rbLakiLaki As RadioButton
     Friend WithEvents lbJenisKelamin As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbJenisPendaftaran As ComboBox
     Friend WithEvents cbTipePembayaran As ComboBox
     Friend WithEvents lbTipeBayar As Label
     Friend WithEvents txtKeluhan As TextBox
@@ -482,5 +463,6 @@ Partial Class FormPendaftaranPasienLama
     Friend WithEvents btnHapus As Button
     Friend WithEvents btnSimpan As Button
     Friend WithEvents btnCariNomerRekamMedis As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtbNomerRekamMedis As TextBox
+    Friend WithEvents lbTempatLahir As Label
 End Class

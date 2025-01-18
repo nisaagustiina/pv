@@ -1,4 +1,6 @@
-﻿Public Class FormPilihPasien
+﻿Imports pv_1.FormPendaftaranPasienBaru
+
+Public Class FormPilihPasien
 
 
     Private Sub FormPendaftaranPasien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,20 +21,19 @@
 
     End Sub
 
-
-
-
     Private Sub btnPilihPasienBaru_Click(sender As Object, e As EventArgs) Handles btnPilihPasienBaru.Click
-        Dim formPendaftaranPasienBaru As New FormPendaftaranPasienBaru()
+        Dim formPendaftaranPasienBaru As New FormPendaftaranPasienBaru(0) ' 0 untuk pasien baru
         FormUtama.TampilkanForm(formPendaftaranPasienBaru) ' Panggil method untuk mengganti konten panel di FormUtama
     End Sub
 
-
-
     Private Sub btnPilihPasienLama_Click(sender As Object, e As EventArgs) Handles btnPilihPasienLama.Click
-        Dim formPendaftaranPasienlama As New FormPendaftaranPasienLama()
-        FormUtama.TampilkanForm(formPendaftaranPasienlama) ' Panggil method untuk mengganti konten panel di FormUtama
+        Dim formPendaftaranPasienLama As New FormPendaftaranPasienLama(1) ' 1 untuk pasien lama
+        FormUtama.TampilkanForm(formPendaftaranPasienLama) ' Panggil method untuk mengganti konten panel di FormUtama
     End Sub
+
+
+
+
 
 
 End Class

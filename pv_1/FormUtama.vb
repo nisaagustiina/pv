@@ -3,8 +3,11 @@
     ' Deklarasi DataTable untuk menyimpan data pasien
     Public Shared DataPasien As New DataTable
 
+
+
     ' Event Load saat Form Utama dijalankan
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Inisialisasi DataTable
         With DataPasien.Columns
             .Add("Nama Pasien", GetType(String))
@@ -20,6 +23,7 @@
 
         ' Mengubah warna latar belakang Panel 
         plnNavigasi.BackColor = ColorTranslator.FromHtml("#0D9276")
+
 
 
 

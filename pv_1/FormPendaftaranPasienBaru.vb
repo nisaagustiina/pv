@@ -1,13 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Google.Protobuf.WellKnownTypes
+Imports MySql.Data.MySqlClient
 Imports System.Globalization
 
 Public Class FormPendaftaranPasienBaru
     ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
-    Enum tipePasien
-        PasienBaru
-        PasienLama
-    End Enum
 
     Enum tipeBayar
         Umum
@@ -15,17 +12,48 @@ Public Class FormPendaftaranPasienBaru
         AsuransiLainnya
     End Enum
 
+
     Dim kuota As Integer
     Dim sisaKuota As Integer
     Dim limitHour As Integer
     Dim lastReset As DateTime
     Dim mrCode As String
 
-    ' Event yang dipicu saat Form dimuat
+
+
+
+    'Jenis Pendaftaran triger dari button
+    Private _jenisPendaftaran As Integer ' 0 = Pasien Baru, 1 = Pasien Lama
+
+    ' Konstruktor baru untuk menerima jenis pendaftaran dari Form Pilih Pasien
+    Public Sub New(jenisPendaftaran As Integer)
+        InitializeComponent()
+        _jenisPendaftaran = jenisPendaftaran
+    End Sub
+
+
+
+    ' Buat Direktori untuk Menyimpan File
+    Private Sub BuatDirektori()
+        ' Path folder Documents
+        Dim documentsPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+
+        ' Gabung dengan nama folder yang ingin dibuat
+        Dim folderPath As String = System.IO.Path.Combine(documentsPath, "DataPasien")
+
+        ' Cek apakah folder sudah ada
+        If Not System.IO.Directory.Exists(folderPath) Then
+            System.IO.Directory.CreateDirectory(folderPath)
+
+        End If
+
+    End Sub
+
     Private Sub FormPendaftaranPasien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Menambahkan jenis pendaftaran ke ComboBox cbJenisPendaftaran
-        cbJenisPendaftaran.Items.Add(tipePasien.PasienBaru.ToString())
-        cbJenisPendaftaran.Items.Add(tipePasien.PasienLama.ToString())
+
+
+        ' Panggil buat direktori
+        BuatDirektori()
 
 
         ' Menambahkan tipe pembayaran ke ComboBox cbTipeBayar
@@ -107,6 +135,7 @@ Public Class FormPendaftaranPasienBaru
         Return String.Empty
     End Function
 
+
     ' Function to reset kuota and update last reset timestamp
     Private Sub ResetKuota()
         Dim query1 As String = "UPDATE config SET value = @SisaKuota WHERE `group` = 'config_antrian' AND `key` = 'sisa_kuota';"
@@ -131,6 +160,7 @@ Public Class FormPendaftaranPasienBaru
         End Using
     End Sub
 
+
     'funcion untuk mr_code
 
     Function GenerateMedicalRecordNumber(format As String) As String
@@ -144,10 +174,11 @@ Public Class FormPendaftaranPasienBaru
         Return medicalRecordNumber
     End Function
 
+
     ' Menyimpan data ke database
     Private Sub btnSimpan_Click_1(sender As Object, e As EventArgs) Handles btnSimpan.Click
         ' Validasi inputan kosong (opsional)
-        If txtNama.Text = "" OrElse txtNIK.Text = "" Then
+        If txtNamaPasien.Text = "" OrElse txtNIK.Text = "" Then
             MessageBox.Show("Harap isi semua kolom yang wajib.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -167,7 +198,7 @@ Public Class FormPendaftaranPasienBaru
             Dim jenisKelamin As String = If(rbLakiLaki.Checked, "M", "F")
             Dim tanggalLahir As DateTime = dtpTanggalLahir.Value
             Dim usia As Integer = CInt(txtUsia.Text)
-            Dim jenisPendaftaran As Integer = cbJenisPendaftaran.SelectedIndex
+            Dim jenisPendaftaran As Integer = _jenisPendaftaran
             Dim tipePembayaran As Integer = cbTipePembayaran.SelectedIndex
 
             If usia <= 0 Then
@@ -187,7 +218,7 @@ Public Class FormPendaftaranPasienBaru
                     conn.Open()
 
                     Dim cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@NamaPasien", txtNama.Text)
+                    cmd.Parameters.AddWithValue("@NamaPasien", txtNamaPasien.Text)
                     cmd.Parameters.AddWithValue("@NoRekamMedis", randCode)
                     cmd.Parameters.AddWithValue("@NIK", txtNIK.Text)
                     cmd.Parameters.AddWithValue("@TanggalLahir", tanggalLahir)
@@ -207,7 +238,7 @@ Public Class FormPendaftaranPasienBaru
                     cmdPendaftaran.Parameters.AddWithValue("@TanggalRegistrasi", DateTime.Now)
                     cmdPendaftaran.Parameters.AddWithValue("@PasienId", pasienId)
                     cmdPendaftaran.Parameters.AddWithValue("@Keluhan", txtKeluhan.Text)
-                    cmdPendaftaran.Parameters.AddWithValue("@JenisPendaftaran", jenisPendaftaran)
+                    cmdPendaftaran.Parameters.AddWithValue("@JenisPendaftaran", _jenisPendaftaran)
                     cmdPendaftaran.Parameters.AddWithValue("@TipePembayaran", tipePembayaran)
                     cmdPendaftaran.Parameters.AddWithValue("@NoAntrian", nomorAntrian)
                     cmdPendaftaran.ExecuteNonQuery()
@@ -224,8 +255,6 @@ Public Class FormPendaftaranPasienBaru
                     ' Menampilkan pesan sukses
                     MessageBox.Show("Data pasien berhasil ditambahkan! Nomor Antrian: " & nomorAntrian, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' Clear form setelah sukses
-                    ClearForm()
 
                 Catch ex As MySqlException
                     MessageBox.Show("Terjadi kesalahan saat menyimpan data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -235,6 +264,14 @@ Public Class FormPendaftaranPasienBaru
             End Using
 
         End If
+
+        ' Panggil fungsi untuk menyimpan File  Data pasien
+        SimpanDataPasienKeFile()
+
+        ' Clear form setelah sukses
+        ClearForm()
+
+
     End Sub
 
     ' Update sisa kuota
@@ -252,9 +289,78 @@ Public Class FormPendaftaranPasienBaru
         End Using
     End Sub
 
+
+    ' Menyimpan Data Pasien ke dalam File
+    Private Sub SimpanDataPasienKeFile()
+        Try
+
+            ' Path folder Documents dan folder DataPasien
+            Dim documentsPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            Dim folderPath As String = System.IO.Path.Combine(documentsPath, "DataPasien")
+            ' Nama file yang ingin disimpan
+            Dim fileName As String = "FileDataPasien.txt"
+            Dim filePath As String = System.IO.Path.Combine(folderPath, fileName)
+            ' Buat folder DataPasien jika belum ada
+            If Not System.IO.Directory.Exists(folderPath) Then
+                System.IO.Directory.CreateDirectory(folderPath)
+            End If
+
+
+            ' Data pasien
+            Dim dataPasien As String = $"Tanggal Pendaftaran: {txtTanggalDaftar.Text}" & Environment.NewLine &
+                                $"Nama Pasien: {txtNamaPasien.Text}" & Environment.NewLine &
+                                 $"NIK: {txtNIK.Text}" & Environment.NewLine &
+                                 $"Tempat Lahir: {txtTempatLahir.Text}" & Environment.NewLine &
+                                 $"Tanggal Lahir: {dtpTanggalLahir.Value.ToShortDateString()}" & Environment.NewLine &
+                                 $"Jenis Kelamin: {(If(rbLakiLaki.Checked, "Laki-laki", "Perempuan"))}" & Environment.NewLine &
+                                 $"Usia: {txtUsia.Text}" & Environment.NewLine &
+                                 $"Alamat: {txtAlamat.Text}" & Environment.NewLine &
+                                 $"Nomor Telepon: {txtNoTelepon.Text}" & Environment.NewLine &
+                                 $"Riwayat Penyakit: {txtKeluhan.Text}" & Environment.NewLine &
+                                 $"Tipe Pembayaran: {cbTipePembayaran.SelectedItem}" & Environment.NewLine &
+                                 "--------------------------------------------"
+
+            ' Menulis data pasien ke file teks
+            System.IO.File.AppendAllText(filePath, dataPasien)
+
+            ' Menampilkan pesan log untuk menunjukkan lokasi file
+            MessageBox.Show($"Data pasien berhasil disimpan! File dapat dilihat di lokasi berikut:{Environment.NewLine}{filePath}",
+                        "Data Disimpan", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Catat log
+            CatatLog("Data pasien berhasil disimpan.")
+        Catch ex As Exception
+            MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    ' File Log Perbahan Menambahkan File Dates and Times 
+    Private Sub CatatLog(pesan As String)
+        Try
+            ' Path folder Documents dan folder DataPasien
+            Dim documentsPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            Dim folderPath As String = System.IO.Path.Combine(documentsPath, "DataPasien")
+
+            ' Path untuk file log
+            Dim logPath As String = System.IO.Path.Combine(folderPath, "log_perubahan_DataPasien.txt")
+
+            ' Pesan log dengan tanggal dan waktu
+            Dim logMessage As String = $"[{DateTime.Now:dd-MM-yyyy HH:mm:ss}] {pesan}"
+
+            ' Menambahkan log ke file
+            System.IO.File.AppendAllText(logPath, logMessage & Environment.NewLine)
+        Catch ex As Exception
+            MessageBox.Show($"Terjadi kesalahan saat mencatat log: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+
+
     ' Fungsi untuk membersihkan semua inputan
     Private Sub ClearForm()
-        txtNama.Clear()
+        txtNamaPasien.Clear()
         txtTempatLahir.Clear()
         txtNIK.Clear()
         txtUsia.Clear()
@@ -263,10 +369,10 @@ Public Class FormPendaftaranPasienBaru
         txtKeluhan.Clear()
         rbLakiLaki.Checked = False
         rbPerempuan.Checked = False
-        cbJenisPendaftaran.SelectedIndex = -1
         cbTipePembayaran.SelectedIndex = -1
         dtpTanggalLahir.Value = DateTime.Now
     End Sub
+
 
 
     ' Custom dialog 
@@ -279,7 +385,7 @@ Public Class FormPendaftaranPasienBaru
 
         If result = DialogResult.Yes Then
             ' Reset semua inputan
-            txtNama.Text = String.Empty
+            txtNamaPasien.Text = String.Empty
             txtTempatLahir.Text = String.Empty
             txtNIK.Text = String.Empty
             dtpTanggalLahir.Value = DateTime.Now ' Reset ke tanggal hari ini
@@ -287,7 +393,6 @@ Public Class FormPendaftaranPasienBaru
             txtAlamat.Text = String.Empty
             txtNoTelepon.Text = String.Empty
             txtKeluhan.Text = String.Empty
-            cbJenisPendaftaran.SelectedIndex = -1 ' Reset ComboBox ke kondisi kosong
             cbTipePembayaran.SelectedIndex = -1 ' Reset ComboBox ke kondisi kosong
             rbLakiLaki.Checked = False ' Reset RadioButton jenis kelamin
             rbPerempuan.Checked = False ' Reset RadioButton jenis kelamin
@@ -299,5 +404,7 @@ Public Class FormPendaftaranPasienBaru
             MessageBox.Show("Data inputan tidak jadi dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+
 
 End Class
