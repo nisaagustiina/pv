@@ -113,4 +113,26 @@ Public Class FormTekananDarah
         lblPerhitunganTekanan.Font = New Font("Arial", 14, FontStyle.Bold)
         lblPerhitunganTekanan.TextAlign = ContentAlignment.MiddleCenter
     End Sub
+
+    'Hapus inputan data BMI
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        'Custom dialog untuk konfirmasi
+        Dim dialog As New FormCustomDialog()
+        dialog.Pesan = "Apakah Anda yakin ingin menghapus data inputan?"
+        Dim result As DialogResult = dialog.ShowDialog()
+
+        If result = DialogResult.Yes Then
+            ' Reset semua inputan
+            txtMrCode.Text = String.Empty
+            txtSistolik.Text = String.Empty
+            txtDiastolik.Text = String.Empty
+
+            ' Tampilkan pesan bahwa inputan telah dihapus
+            MessageBox.Show("Data inputan berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            ' Jika tidak jadi menghapus
+            MessageBox.Show("Data inputan tidak jadi dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
 End Class

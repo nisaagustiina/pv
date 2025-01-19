@@ -61,12 +61,12 @@ Partial Class FormDataPendaftaran
         lbDataPasien.AutoSize = True
         lbDataPasien.Font = New Font("Arial", 13.8F, FontStyle.Bold)
         lbDataPasien.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
-        lbDataPasien.Location = New Point(498, 19)
+        lbDataPasien.Location = New Point(455, 25)
         lbDataPasien.Margin = New Padding(10)
         lbDataPasien.Name = "lbDataPasien"
-        lbDataPasien.Size = New Size(255, 27)
+        lbDataPasien.Size = New Size(343, 27)
         lbDataPasien.TabIndex = 105
-        lbDataPasien.Text = "DATA PENDAFTARAN"
+        lbDataPasien.Text = "DATA PENDAFTARAN PASIEN"
         lbDataPasien.TextAlign = ContentAlignment.TopCenter
         ' 
         ' FormDataPendaftaran
@@ -82,7 +82,7 @@ Partial Class FormDataPendaftaran
         Margin = New Padding(3, 7, 3, 7)
         Name = "FormDataPendaftaran"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form Data Pendaftaran"
+        Text = "Data Pendaftaran Pasien"
         CType(dgvDataPendaftaran, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

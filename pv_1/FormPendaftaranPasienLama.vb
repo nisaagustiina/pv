@@ -25,11 +25,32 @@ Public Class FormPendaftaranPasienLama
         lbPendaftaranPasienLama.TextAlign = ContentAlignment.MiddleCenter
 
         ' Menambahkan tipe pembayaran ke ComboBox cbTipeBayar
-        For Each tipePembayaran As String In tipePembayaranArray 
-            cbTipePembayaran.Items.Add(tipePembayaran) 
+        For Each tipePembayaran As String In tipePembayaranArray
+            cbTipePembayaran.Items.Add(tipePembayaran)
         Next
 
+        ' Placeholder di TextBox
+        txtbNomerRekamMedis.Text = "Masukkan Nomor Rekam Medis"
+        txtbNomerRekamMedis.ForeColor = Color.Gray ' Ubah warna teks menjadi abu-abu
+
     End Sub
+
+    ' Hapus teks placeholder ketika TextBox fokus
+    Private Sub txtCariNomorRekamMedis_Enter(sender As Object, e As EventArgs) Handles txtbNomerRekamMedis.Enter
+        If txtbNomerRekamMedis.Text = "Masukkan Nomor Rekam Medis" Then
+            txtbNomerRekamMedis.Text = ""
+            txtbNomerRekamMedis.ForeColor = Color.Black ' Ubah warna teks menjadi hitam
+        End If
+    End Sub
+
+    ' Teks placeholder jika TextBox kosong
+    Private Sub txtCariNomorRekamMedis_Leave(sender As Object, e As EventArgs) Handles txtbNomerRekamMedis.Leave
+        If String.IsNullOrWhiteSpace(txtbNomerRekamMedis.Text) Then
+            txtbNomerRekamMedis.Text = "Masukkan Nomor Rekam Medis"
+            txtbNomerRekamMedis.ForeColor = Color.Gray ' Ubah warna teks menjadi abu-abu
+        End If
+    End Sub
+
 
     ' Custom dialog 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
