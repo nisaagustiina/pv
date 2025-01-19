@@ -6,20 +6,14 @@ Public Class FormPendaftaranPasienBaru
     ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
 
-    Enum tipeBayar
-        Umum
-        BPJS
-        AsuransiLainnya
-    End Enum
-
+    ' Array untuk tipe pembayaran
+    Dim tipePembayaranArray() As String = {"Umum", "BPJS", "Asuransi Lainnya"}
 
     Dim kuota As Integer
     Dim sisaKuota As Integer
     Dim limitHour As Integer
     Dim lastReset As DateTime
     Dim mrCode As String
-
-
 
     'Jenis Pendaftaran triger dari button
     Private _jenisPendaftaran As Integer ' 0 = Pasien Baru, 1 = Pasien Lama
@@ -29,8 +23,6 @@ Public Class FormPendaftaranPasienBaru
         InitializeComponent()
         _jenisPendaftaran = jenisPendaftaran
     End Sub
-
-
 
     ' Buat Direktori untuk Menyimpan File
     Private Sub BuatDirektori()
@@ -45,21 +37,17 @@ Public Class FormPendaftaranPasienBaru
             System.IO.Directory.CreateDirectory(folderPath)
 
         End If
-
     End Sub
 
     Private Sub FormPendaftaranPasienBaru_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         ' Panggil buat direktori
         BuatDirektori()
 
-
         ' Menambahkan tipe pembayaran ke ComboBox cbTipeBayar
-        cbTipePembayaran.Items.Add(tipeBayar.Umum.ToString())
-        cbTipePembayaran.Items.Add(tipeBayar.BPJS.ToString())
-        cbTipePembayaran.Items.Add(tipeBayar.AsuransiLainnya.ToString())
-
+        For Each tipePembayaran As String In tipePembayaranArray 
+            cbTipePembayaran.Items.Add(tipePembayaran) 
+        Next
 
         ' Label pendaftaran pasien
         lbPendaftaranPasienBaru.Text = "PENDAFTARAN PASIEN BARU"
@@ -89,7 +77,6 @@ Public Class FormPendaftaranPasienBaru
         'Set tanggal pendaftaran secara otomatis ke TextBox
         Dim tanggalSekarang As String = DateTime.Now.ToString("dddd, dd MMMM yyyy", New CultureInfo("id-ID"))
         txtTanggalDaftar.Text = tanggalSekarang
-
 
         kuota = CInt(GetConfigValue("config_antrian", "kuota"))
         sisaKuota = CInt(GetConfigValue("config_antrian", "sisa_kuota"))
@@ -135,7 +122,6 @@ Public Class FormPendaftaranPasienBaru
         Return String.Empty
     End Function
 
-
     ' Function to reset kuota and update last reset timestamp
     Private Sub ResetKuota()
         Dim query1 As String = "UPDATE config SET value = @SisaKuota WHERE `group` = 'config_antrian' AND `key` = 'sisa_kuota';"
@@ -160,9 +146,7 @@ Public Class FormPendaftaranPasienBaru
         End Using
     End Sub
 
-
-    'funcion untuk mr_code
-
+    'Funcion untuk mr_code
     Function GenerateMedicalRecordNumber(format As String) As String
         ' Mendapatkan angka acak
         Dim random As New Random()
@@ -170,10 +154,8 @@ Public Class FormPendaftaranPasienBaru
 
         ' Mengganti placeholder {{No}} dengan angka acak
         Dim medicalRecordNumber As String = format.Replace("{{NO}}", randomNumber.ToString())
-
         Return medicalRecordNumber
     End Function
-
 
     ' Menyimpan data ke database
     Private Sub btnSimpan_Click_1(sender As Object, e As EventArgs) Handles btnSimpan.Click
@@ -199,8 +181,17 @@ Public Class FormPendaftaranPasienBaru
             Dim tanggalLahir As DateTime = dtpTanggalLahir.Value
             Dim usia As Integer = CInt(txtUsia.Text)
             Dim jenisPendaftaran As Integer = _jenisPendaftaran
-            Dim tipePembayaran As Integer = cbTipePembayaran.SelectedIndex
+           Dim tipePembayaran As String = cbTipePembayaran.SelectedItem?.ToString()
 
+       ' Konversi tipe pembayaran menjadi integer 
+        Dim paymentType As Integer = -1 ' Default jika tidak dipilih 
+        If Not String.IsNullOrEmpty(tipePembayaran) Then 
+        ' Cari indeks tipe pembayaran dalam array 
+            Dim index As Integer = Array.IndexOf(tipePembayaranArray, tipePembayaran) 
+            If index >= 0 Then
+                paymentType = index + 1 
+            End If 
+        End If
 
             If usia <= 0 Then
                 MessageBox.Show("Usia tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -240,7 +231,7 @@ Public Class FormPendaftaranPasienBaru
                     cmdPendaftaran.Parameters.AddWithValue("@PasienId", pasienId)
                     cmdPendaftaran.Parameters.AddWithValue("@Keluhan", txtKeluhan.Text)
                     cmdPendaftaran.Parameters.AddWithValue("@JenisPendaftaran", _jenisPendaftaran)
-                    cmdPendaftaran.Parameters.AddWithValue("@TipePembayaran", tipePembayaran)
+                    cmdPendaftaran.Parameters.AddWithValue("@TipePembayaran", paymentType)
                     cmdPendaftaran.Parameters.AddWithValue("@NoAntrian", nomorAntrian)
                     cmdPendaftaran.ExecuteNonQuery()
 
@@ -256,7 +247,6 @@ Public Class FormPendaftaranPasienBaru
                     ' Menampilkan pesan sukses
                     MessageBox.Show("Data pasien berhasil ditambahkan! Nomor Antrian: " & nomorAntrian, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
                 Catch ex As MySqlException
                     MessageBox.Show("Terjadi kesalahan saat menyimpan data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Catch ex As Exception
@@ -271,7 +261,6 @@ Public Class FormPendaftaranPasienBaru
 
         ' Clear form setelah sukses
         ClearForm()
-
 
     End Sub
 
@@ -289,7 +278,6 @@ Public Class FormPendaftaranPasienBaru
             End Try
         End Using
     End Sub
-
 
     ' Menyimpan Data Pasien ke dalam File
     Private Sub SimpanDataPasienKeFile()
@@ -402,7 +390,5 @@ Public Class FormPendaftaranPasienBaru
             MessageBox.Show("Data inputan tidak jadi dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
 
 End Class

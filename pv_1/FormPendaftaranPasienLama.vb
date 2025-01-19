@@ -6,11 +6,8 @@ Public Class FormPendaftaranPasienLama
     ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
 
-    Enum tipeBayar
-        Umum
-        BPJS
-        AsuransiLainnya
-    End Enum
+    ' Array untuk tipe pembayaran
+    Dim tipePembayaranArray() As String = {"Umum", "BPJS", "Asuransi Lainnya"}
 
     'Jenis Pendaftaran triger dari button
     Private _jenisPendaftaran As Integer ' 0 = Pasien Baru, 1 = Pasien Lama
@@ -21,29 +18,21 @@ Public Class FormPendaftaranPasienLama
         _jenisPendaftaran = jenisPendaftaran
     End Sub
 
-
-
     Private Sub FormPendaftaranPasienLama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         ' Label pendaftaran pasien
         lbPendaftaranPasienLama.Text = "PENDAFTARAN PASIEN LAMA"
         lbPendaftaranPasienLama.Font = New Font("Arial", 14, FontStyle.Bold)
         lbPendaftaranPasienLama.TextAlign = ContentAlignment.MiddleCenter
 
-
         ' Menambahkan tipe pembayaran ke ComboBox cbTipeBayar
-        cbTipePembayaran.Items.Add(tipeBayar.Umum.ToString())
-        cbTipePembayaran.Items.Add(tipeBayar.BPJS.ToString())
-        cbTipePembayaran.Items.Add(tipeBayar.AsuransiLainnya.ToString())
-
+        For Each tipePembayaran As String In tipePembayaranArray 
+            cbTipePembayaran.Items.Add(tipePembayaran) 
+        Next
 
     End Sub
 
-
-
     ' Custom dialog 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-
         'Custom dialog untuk konfirmasi
         Dim dialog As New FormCustomDialog()
         dialog.Pesan = "Apakah Anda yakin ingin menghapus data inputan?"
@@ -54,7 +43,6 @@ Public Class FormPendaftaranPasienLama
             txtKeluhan.Text = String.Empty
             cbTipePembayaran.SelectedIndex = -1 ' Reset ComboBox ke kondisi kosong
 
-
             ' Tampilkan pesan bahwa inputan telah dihapus
             MessageBox.Show("Data inputan berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
@@ -62,8 +50,6 @@ Public Class FormPendaftaranPasienLama
             MessageBox.Show("Data inputan tidak jadi dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
 
     'Mencari Data Pasien Berdasarkan Nomor Rekam Medis
     Private Sub SearchPatientByRM(nomorRekamMedis As String)
@@ -103,7 +89,6 @@ Public Class FormPendaftaranPasienLama
                     txtUsia.Text = reader("age").ToString()
                     txtAlamat.Text = reader("address").ToString()
                     txtNoTelepon.Text = reader("phone_number").ToString()
-
                 End While
             Else
                 MessageBox.Show("Data pasien tidak ditemukan.")
@@ -117,7 +102,6 @@ Public Class FormPendaftaranPasienLama
         End Try
     End Sub
 
-
     ' Button Cari Nomer Rekam Medis
     Private Sub btnCariNomerRekamMedis_Click(sender As Object, e As EventArgs) Handles btnCariNomerRekamMedis.Click
         Dim nomorRekamMedis As String = txtbNomerRekamMedis.Text ' Ambil nomor rekam medis dari TextBox
@@ -128,15 +112,13 @@ Public Class FormPendaftaranPasienLama
         End If
     End Sub
 
-
     'Update Jenis Pendaftaran Keluahan dan Tipe pembayaran
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+
         ' Ambil data dari kontrol inputan
         Dim nomorRekamMedis As String = txtbNomerRekamMedis.Text
         Dim keluhan As String = txtKeluhan.Text
         Dim tipePembayaran As String = cbTipePembayaran.SelectedItem?.ToString()
-
-
 
         ' Validasi inputan
         If String.IsNullOrEmpty(nomorRekamMedis) Then
@@ -149,22 +131,15 @@ Public Class FormPendaftaranPasienLama
             Return
         End If
 
-        ' Konversi tipe pembayaran menjadi integer
-        Dim paymentType As Integer = -1 ' Default jika tidak dipilih
-        If Not String.IsNullOrEmpty(tipePembayaran) Then
-            Select Case tipePembayaran.ToLower()
-                Case tipeBayar.Umum.ToString().ToLower()
-                    paymentType = tipeBayar.Umum
-                Case tipeBayar.BPJS.ToString().ToLower()
-                    paymentType = tipeBayar.BPJS
-                Case tipeBayar.AsuransiLainnya.ToString().ToLower()
-                    paymentType = tipeBayar.AsuransiLainnya
-                Case Else
-                    paymentType = -1
-            End Select
+       ' Konversi tipe pembayaran menjadi integer 
+        Dim paymentType As Integer = -1 ' Default jika tidak dipilih 
+        If Not String.IsNullOrEmpty(tipePembayaran) Then 
+        ' Cari indeks tipe pembayaran dalam array 
+            Dim index As Integer = Array.IndexOf(tipePembayaranArray, tipePembayaran) 
+            If index >= 0 Then
+                paymentType = index + 1 
+            End If 
         End If
-
-
 
         Try
             ' Membuka koneksi ke database
@@ -173,7 +148,6 @@ Public Class FormPendaftaranPasienLama
             ' Ambil data lama sebelum update
             Dim keluhanLama As String = GetKeluhanFromDatabase(nomorRekamMedis)
             Dim tipePembayaranLama As Integer = GetTipePembayaranFromDatabase(nomorRekamMedis)
-
 
             ' Query untuk memperbarui jenis pendfataran  keluhan dan tipe pembayaran di tabel registrations
             Dim query As String = "UPDATE registrations SET complaint = @keluhan, payment_type = @payment_type, type = @jenis_pendaftaran WHERE patient_id = (SELECT id FROM patients WHERE mr_no = @mr_no)"
@@ -185,10 +159,8 @@ Public Class FormPendaftaranPasienLama
             cmd.Parameters.AddWithValue("@payment_type", If(paymentType = -1, DBNull.Value, paymentType))
             cmd.Parameters.AddWithValue("@jenis_pendaftaran", _jenisPendaftaran)
 
-
             ' Menjalankan query
             Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
-
 
             ' Catete Log Perubahan
             If rowsAffected > 0 Then
@@ -203,19 +175,13 @@ Public Class FormPendaftaranPasienLama
 
                 MessageBox.Show("Data berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
                 ' Menampilkan path log di MessageBox
                 Dim logPath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "DataPasien\log_perubahan.txt")
                 MessageBox.Show("Log perubahan dapat dilihat di lokasi berikut:\n" & logPath, "Path Log Perubahan", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
                 ClearForm()
-
             Else
                 MessageBox.Show("Tidak ada data yang diperbarui. Periksa kembali nomor rekam medis.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
-
-
-
         Catch ex As Exception
             MessageBox.Show("Terjadi kesalahan: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
@@ -225,27 +191,28 @@ Public Class FormPendaftaranPasienLama
 
     End Sub
 
-
     ' Fungsi untuk mendapatkan keluhan dari database berdasarkan nomor rekam medis
     Private Function GetKeluhanFromDatabase(nomorRekamMedis As String) As String
         ' Query untuk mengambil data keluhan lama
-        Dim query As String = "SELECT complaint FROM registrations WHERE patient_id = (SELECT id FROM patients WHERE mr_no = @mr_no)"
+       Dim query As String = "SELECT complaint FROM registrations " & _
+                          "WHERE patient_id = (SELECT id FROM patients WHERE mr_no = @mr_no) " & _
+                          "ORDER BY created_at DESC LIMIT 1"
         Using cmd As New MySqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@mr_no", nomorRekamMedis)
             Return cmd.ExecuteScalar()?.ToString()
         End Using
     End Function
 
-
     ' Fungsi untuk mendapatkan tipe pembayaran dari database berdasarkan nomor rekam medis
     Private Function GetTipePembayaranFromDatabase(nomorRekamMedis As String) As Integer
-        Dim query As String = "SELECT payment_type FROM registrations WHERE patient_id = (SELECT id FROM patients WHERE mr_no = @mr_no)"
+        Dim query As String = "SELECT payment_type FROM registrations " & _
+                          "WHERE patient_id = (SELECT id FROM patients WHERE mr_no = @mr_no) " & _
+                          "ORDER BY created_at DESC LIMIT 1"
         Using cmd As New MySqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@mr_no", nomorRekamMedis)
             Return Convert.ToInt32(cmd.ExecuteScalar())
         End Using
     End Function
-
 
     ' File Log Perbahan Menambahkan File Dates and Times 
     Private Sub CatatLog(pesan As String)
@@ -260,8 +227,6 @@ Public Class FormPendaftaranPasienLama
         Dim logMessage As String = $"[{DateTime.Now:dd-MM-yyyy HH:mm:ss}] {pesan}"
         System.IO.File.AppendAllText(logPath, logMessage & Environment.NewLine)
     End Sub
-
-
 
     ' Fungsi untuk membersihkan semua inputan
     Private Sub ClearForm()
@@ -279,7 +244,5 @@ Public Class FormPendaftaranPasienLama
         txtNoTelepon.Clear()
         dtpTanggalLahir.Value = DateTime.Now ' Reset tanggal lahir ke default
     End Sub
-
-
 
 End Class

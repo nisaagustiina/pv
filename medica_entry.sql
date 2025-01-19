@@ -54,8 +54,8 @@ INSERT INTO `config` (`id`, `group`, `key`, `value`) VALUES
 CREATE TABLE `medical_records` (
   `id` bigint UNSIGNED NOT NULL,
   `patient_id` bigint UNSIGNED NOT NULL,
-  `height` float DEFAULT NULL,
-  `weight` float DEFAULT NULL,
+  `height` double DEFAULT NULL,
+  `weight` double DEFAULT NULL,
   `systolic_pressure` int DEFAULT NULL,
   `diastolic_pressure` int DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
