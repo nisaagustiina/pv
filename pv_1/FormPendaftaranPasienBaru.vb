@@ -21,7 +21,6 @@ Public Class FormPendaftaranPasienBaru
 
 
 
-
     'Jenis Pendaftaran triger dari button
     Private _jenisPendaftaran As Integer ' 0 = Pasien Baru, 1 = Pasien Lama
 
@@ -49,7 +48,7 @@ Public Class FormPendaftaranPasienBaru
 
     End Sub
 
-    Private Sub FormPendaftaranPasien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormPendaftaranPasienBaru_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
         ' Panggil buat direktori
@@ -60,6 +59,7 @@ Public Class FormPendaftaranPasienBaru
         cbTipePembayaran.Items.Add(tipeBayar.Umum.ToString())
         cbTipePembayaran.Items.Add(tipeBayar.BPJS.ToString())
         cbTipePembayaran.Items.Add(tipeBayar.AsuransiLainnya.ToString())
+
 
         ' Label pendaftaran pasien
         lbPendaftaranPasienBaru.Text = "PENDAFTARAN PASIEN BARU"
@@ -200,6 +200,7 @@ Public Class FormPendaftaranPasienBaru
             Dim usia As Integer = CInt(txtUsia.Text)
             Dim jenisPendaftaran As Integer = _jenisPendaftaran
             Dim tipePembayaran As Integer = cbTipePembayaran.SelectedIndex
+
 
             If usia <= 0 Then
                 MessageBox.Show("Usia tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -356,8 +357,6 @@ Public Class FormPendaftaranPasienBaru
     End Sub
 
 
-
-
     ' Fungsi untuk membersihkan semua inputan
     Private Sub ClearForm()
         txtNamaPasien.Clear()
@@ -372,7 +371,6 @@ Public Class FormPendaftaranPasienBaru
         cbTipePembayaran.SelectedIndex = -1
         dtpTanggalLahir.Value = DateTime.Now
     End Sub
-
 
 
     ' Custom dialog 

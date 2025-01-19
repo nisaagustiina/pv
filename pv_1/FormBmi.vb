@@ -4,14 +4,14 @@ Imports Mysqlx.Expect.Open.Types.Condition.Types
 Imports Mysqlx.XDevAPI.Common
 Imports ZstdSharp.Unsafe
 
-
 Public Class FormBMI
 
+    ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
 
-    Const UnderweightLimit As Double = 18.5
-    Const NormalLimit As Double = 24.9
-    Const OverweightLimit As Double = 29.9
+    ' Array untuk kategori BMI dan batas-batasnya
+    Dim BMICategories() As String = {"Kekurangan Berat Badan", "Normal", "Kelebihan Berat Badan", "Obesitas"}
+    Dim BMILimits() As Double = {18.5, 24.9, 29.9, Double.MaxValue} ' Batas maksimum untuk setiap kategori
 
     Dim weight As Double
     Shadows height As Double
@@ -43,9 +43,9 @@ Public Class FormBMI
     End Function
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
-        Name = txtMRName.Text
+        MRName = txtMRName.Text
 
-        If String.IsNullOrWhiteSpace(Name) Then
+        If String.IsNullOrWhiteSpace(MRName) Then
             MessageBox.Show("Masukkan no rekam medis Anda.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
@@ -59,15 +59,13 @@ Public Class FormBMI
             Exit Sub
         End If
 
-        If Double.TryParse(txtWeight.Text, weight) And Double.TryParse(txtHeight.Text, height) Then
-            If weight > 0 And height > 0 Then
-
-                ' Asumsikan nilai tinggi adalah cm, ubah ke meter
+        If Double.TryParse(txtWeight.Text, weight) AndAlso Double.TryParse(txtHeight.Text, height) Then
+            If weight > 0 AndAlso height > 0 Then
+                ' Asumsikan tinggi dalam cm, ubah ke meter
                 height = height / 100
                 bmi = weight / (height * height)
 
-                Dim query As String = "UPDATE medical_records SET height = @height, weight = @height WHERE patient_id = @pasienId"
-
+                Dim query As String = "UPDATE medical_records SET height = @height, weight = @weight WHERE patient_id = @pasienId"
 
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@height", height)
@@ -101,15 +99,13 @@ Public Class FormBMI
     End Sub
 
     Private Function GetBMICategory(ByVal bmi As Double) As String
-        If bmi < UnderweightLimit Then
-            Return "Kekurangan Berat Badan"
-        ElseIf bmi <= NormalLimit Then
-            Return "Normal"
-        ElseIf bmi <= OverweightLimit Then
-            Return "Kelebihan Berat Badan"
-        Else
-            Return "Obesitas"
-        End If
+        ' Looping untuk menentukan kategori berdasarkan batas-batas
+        For i As Integer = 0 To BMILimits.Length - 1
+            If bmi <= BMILimits(i) Then
+                Return BMICategories(i)
+            End If
+        Next
+        Return "Tidak Diketahui"
     End Function
 
     Private Sub ClearForm()
@@ -118,16 +114,11 @@ Public Class FormBMI
         txtHeight.Clear()
     End Sub
 
-
-    Private Sub FormPendaftaranPasien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Label Hitung BMI 
+    Private Sub FormBMI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Label Hitung BMI
         lblPerhitunganBMI.Text = "PERHITUNGAN BMI"
         lblPerhitunganBMI.Font = New Font("Arial", 14, FontStyle.Bold)
         lblPerhitunganBMI.TextAlign = ContentAlignment.MiddleCenter
-
     End Sub
 
-    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblPerhitunganBMI.Click
-
-    End Sub
 End Class

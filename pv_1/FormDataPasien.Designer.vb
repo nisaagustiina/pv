@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormDataPasien
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,11 @@ Partial Class FormDataPasien
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         dgvPasien = New DataGridView()
         lbDataPasien = New Label()
+        btnDowlondFile = New Button()
         CType(dgvPasien, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -55,12 +56,27 @@ Partial Class FormDataPasien
         lbDataPasien.Text = "DATA PASIEN"
         lbDataPasien.TextAlign = ContentAlignment.TopCenter
         ' 
+        ' btnDowlondFile
+        ' 
+        btnDowlondFile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDowlondFile.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnDowlondFile.Font = New Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDowlondFile.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnDowlondFile.Location = New Point(992, 52)
+        btnDowlondFile.Margin = New Padding(10)
+        btnDowlondFile.Name = "btnDowlondFile"
+        btnDowlondFile.Size = New Size(174, 47)
+        btnDowlondFile.TabIndex = 1
+        btnDowlondFile.Text = "Download File"
+        btnDowlondFile.UseVisualStyleBackColor = False
+        ' 
         ' FormDataPasien
         ' 
-        AutoScaleDimensions = New SizeF(8F, 44F)
+        AutoScaleDimensions = New SizeF(8.0F, 44.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
         ClientSize = New Size(1200, 754)
+        Controls.Add(btnDowlondFile)
         Controls.Add(lbDataPasien)
         Controls.Add(dgvPasien)
         Font = New Font("Sans Serif Collection", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -75,4 +91,5 @@ Partial Class FormDataPasien
 
     Friend WithEvents dgvPasien As DataGridView
     Friend WithEvents lbDataPasien As Label
+    Friend WithEvents btnDowlondFile As Button
 End Class

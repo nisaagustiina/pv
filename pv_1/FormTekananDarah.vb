@@ -6,12 +6,9 @@ Imports Mysqlx.XDevAPI.Common
 Public Class FormTekananDarah
     ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
-    Enum KategoriTekananDarah
-        Normal
-        Tinggi
-        Rendah
-        TidakTahu
-    End Enum
+
+    ' Array kategori tekanan darah
+    Dim KategoriTekananDarah() As String = {"Normal", "Tinggi", "Rendah"}
 
     Const TekananNormalMaxSistolik As Integer = 120
     Const TekananNormalMaxDiastolik As Integer = 80
@@ -20,7 +17,8 @@ Public Class FormTekananDarah
 
     Dim sistolik As Integer
     Dim diastolik As Integer
-    Dim kategori As KategoriTekananDarah
+    Dim kategori As String
+    Dim noRekamMedis As String
 
     Private Function GetPasien(mrCode As String) As (Integer, String)
         Dim query As String = "SELECT id, name FROM patients WHERE `mr_no` = @mrCode"
@@ -48,12 +46,14 @@ Public Class FormTekananDarah
 
     Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
 
-        If String.IsNullOrWhiteSpace(txtMrCode.Text) Then
+        noRekamMedis = txtMrCode.Text
+
+        If String.IsNullOrWhiteSpace(noRekamMedis) Then
             MessageBox.Show("Masukkan no rekam medis Anda.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        Dim result = GetPasien(txtMrCode.Text)
+        Dim result = GetPasien(noRekamMedis)
         Dim pasienId As Integer = result.Item1
         Dim pasienNama As String = result.Item2
 
@@ -82,7 +82,7 @@ Public Class FormTekananDarah
                 End Try
             End Using
 
-            MessageBox.Show("Nama: " & pasienNama & Environment.NewLine & "Kategori Tekanan Darah: " & kategori.ToString(), "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Nama: " & pasienNama & Environment.NewLine & "Kategori Tekanan Darah: " & kategori, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Else
             MessageBox.Show("Input nilai sistolik dan diastolik dengan benar.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -90,13 +90,14 @@ Public Class FormTekananDarah
 
         ClearForm()
     End Sub
-    Private Function TentukanKategoriTekananDarah(sistolik As Integer, diastolik As Integer) As KategoriTekananDarah
+
+    Private Function TentukanKategoriTekananDarah(sistolik As Integer, diastolik As Integer) As String
         If sistolik <= TekananNormalMaxSistolik And diastolik <= TekananNormalMaxDiastolik Then
-            Return KategoriTekananDarah.Normal
+            Return KategoriTekananDarah(0) ' Normal
         ElseIf sistolik >= TekananTinggiSistolik Or diastolik >= TekananTinggiDiastolik Then
-            Return KategoriTekananDarah.Tinggi
+            Return KategoriTekananDarah(1) ' Tinggi
         Else
-            Return KategoriTekananDarah.Rendah
+            Return KategoriTekananDarah(2) ' Rendah
         End If
     End Function
 
@@ -105,14 +106,11 @@ Public Class FormTekananDarah
         txtSistolik.Clear()
         txtMrCode.Clear()
     End Sub
+
     Private Sub FormTekananDarah_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Label Hitung bmi pasien
+        ' Label Hitung BMI pasien
         lblPerhitunganTekanan.Text = "PERHITUNGAN TEKANAN DARAH"
         lblPerhitunganTekanan.Font = New Font("Arial", 14, FontStyle.Bold)
         lblPerhitunganTekanan.TextAlign = ContentAlignment.MiddleCenter
-
-
     End Sub
-
-
 End Class

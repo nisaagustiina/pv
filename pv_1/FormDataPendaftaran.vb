@@ -4,7 +4,7 @@ Imports MySql.Data.MySqlClient
 Public Class FormDataPendaftaran
     ' Koneksi ke database
     Dim conn As MySqlConnection = DBConnection.GetConnection()
-
+    Dim dataToPrint As List(Of List(Of String)) = New List(Of List(Of String))()
     Private Sub FormDataPendaftaran_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
     End Sub
@@ -26,16 +26,16 @@ Public Class FormDataPendaftaran
             ' Query Data Pendaftaran
             Dim query As String = "
                 SELECT 
-                    r.registration_date, 
-                    p.name, 
-                    p.mr_no, 
-                    r.complaint,
+                    r.registration_date AS 'Tanggal Registrasi', 
+                    p.name AS 'Nama Pasien', 
+                    p.mr_no AS 'No Rekam Medis', 
+                    r.complaint AS 'Keluhan',
                     CASE 
                         WHEN r.payment_type = 0 THEN 'Umum'
                         WHEN r.payment_type = 1 THEN 'BPJS'
                         WHEN r.payment_type = 2 THEN 'Lainnya'
-                    END AS payment_type,
-                    r.queue_no
+                    END AS 'Tipe Pembayaran' ,
+                    r.queue_no AS 'Nomor Antrian'
                 FROM registrations r
                 INNER JOIN patients p ON r.patient_id = p.id
                 ORDER BY r.registration_date DESC"
@@ -74,78 +74,133 @@ Public Class FormDataPendaftaran
             End If
         End Try
     End Sub
+    Private Sub PrepareDataForPrinting()
+        dataToPrint.Clear()
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Menambahkan header kolom
+        Dim header As New List(Of String)
+        For Each column As DataGridViewColumn In dgvDataPendaftaran.Columns
+            header.Add(column.HeaderText)
+        Next
+        dataToPrint.Add(header)
 
-        PrintGridView = dgvDataPendaftaran
+        ' Menambahkan setiap baris data
+        For Each row As DataGridViewRow In dgvDataPendaftaran.Rows
+            If Not row.IsNewRow Then
+                Dim line As New List(Of String)
+                For Each cell As DataGridViewCell In row.Cells
+                    line.Add(If(cell.Value IsNot Nothing, cell.Value.ToString(), ""))
+                Next
+                dataToPrint.Add(line)
+            End If
+        Next
+    End Sub
 
-        ' Menampilkan PrintDialog
+    Private Sub PrintToPDF(filePath As String)
+        Dim printDoc As New PrintDocument()
+        Dim printFont As New Font("Arial", 10)
+        Dim columnWidths As List(Of Integer) = Nothing
+        Dim rowHeights As List(Of Integer) = Nothing
+
+        ' Set landscape orientation
+        printDoc.DefaultPageSettings.Landscape = True
+
+        AddHandler printDoc.PrintPage, Sub(sender, e)
+                                           Dim startX As Integer = e.MarginBounds.Left
+                                           Dim startY As Integer = e.MarginBounds.Top
+                                           Dim cellHeight As Integer = CInt(printFont.GetHeight(e.Graphics)) + 5
+                                           Dim currentY As Integer = startY
+                                           'Calculate column widths and row heights to fit all text
+                                           columnWidths = New List(Of Integer)()
+                                           rowHeights = New List(Of Integer)()
+
+                                           For i As Integer = 0 To dataToPrint(0).Count - 1
+                                               Dim maxWidth As Integer = 0
+                                               For Each row In dataToPrint
+                                                   Dim textWidth As Integer = CInt(e.Graphics.MeasureString(row(i), printFont).Width)
+                                                   If textWidth > maxWidth Then
+                                                       maxWidth = textWidth
+                                                   End If
+                                               Next
+                                               columnWidths.Add(maxWidth + 10) ' Add padding
+                                           Next
+
+                                           For Each row In dataToPrint
+                                               Dim maxHeight As Integer = cellHeight
+                                               For Each cellText In row
+                                                   Dim textHeight As Integer = CInt(e.Graphics.MeasureString(cellText, printFont, columnWidths(row.IndexOf(cellText))).Height)
+                                                   If textHeight > maxHeight Then
+                                                       maxHeight = textHeight + 5
+                                                   End If
+                                               Next
+                                               rowHeights.Add(maxHeight)
+                                           Next
+
+                                           ' Scale columns and rows if total dimensions exceed page size
+                                           Dim totalWidth As Integer = columnWidths.Sum()
+                                           If totalWidth > e.MarginBounds.Width Then
+                                               Dim scaleFactor As Double = e.MarginBounds.Width / totalWidth
+                                               For i As Integer = 0 To columnWidths.Count - 1
+                                                   columnWidths(i) = CInt(columnWidths(i) * scaleFactor)
+                                               Next
+                                           End If
+
+                                           Dim totalHeight As Integer = rowHeights.Sum()
+                                           If totalHeight > e.MarginBounds.Height Then
+                                               Dim scaleFactor As Double = e.MarginBounds.Height / totalHeight
+                                               For i As Integer = 0 To rowHeights.Count - 1
+                                                   rowHeights(i) = CInt(rowHeights(i) * scaleFactor)
+                                               Next
+                                           End If
+
+                                           ' Draw data in table
+                                           For rowIndex As Integer = 0 To dataToPrint.Count - 1
+                                               Dim row As List(Of String) = dataToPrint(rowIndex)
+                                               Dim currentX As Integer = startX
+
+                                               ' Draw each column in the row
+                                               For col As Integer = 0 To row.Count - 1
+                                                   Dim cellText As String = row(col)
+                                                   Dim rect As New Rectangle(currentX, currentY, columnWidths(col), rowHeights(rowIndex))
+                                                   e.Graphics.DrawRectangle(Pens.Black, rect)
+                                                   e.Graphics.DrawString(cellText, printFont, Brushes.Black, New RectangleF(currentX + 2, currentY + 2, columnWidths(col) - 4, rowHeights(rowIndex) - 4))
+                                                   currentX += columnWidths(col)
+                                               Next
+
+                                               currentY += rowHeights(rowIndex)
+                                           Next
+
+                                           e.HasMorePages = False ' Ensure all content fits on one page
+                                       End Sub
+
+
+
+        ' Direct output to PDF file
         Dim printDialog As New PrintDialog()
-        printDialog.Document = PrintDoc
+        printDialog.Document = printDoc
+        printDoc.PrinterSettings.PrinterName = "Microsoft Print to PDF"
+        printDoc.PrinterSettings.PrintToFile = True
+        printDoc.PrinterSettings.PrintFileName = filePath
 
-        If printDialog.ShowDialog() = DialogResult.OK Then
-            PrintDoc.DocumentName = "GridView Print"
-            PrintDoc.Print()
+        Try
+            printDoc.Print()
+            MessageBox.Show("Data berhasil disimpan ke " & filePath, "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Terjadi kesalahan: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+    Private Sub btnDowlondFile_Click(sender As Object, e As EventArgs) Handles btnDowlondFile.Click
+
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
+        saveFileDialog.Title = "Simpan File PDF"
+
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            PrepareDataForPrinting()
+            PrintToPDF(saveFileDialog.FileName)
         End If
     End Sub
 
-    Private Sub PrintDoc_BeginPrint(sender As Object, e As PrintEventArgs) Handles PrintDoc.BeginPrint
-        PageNo = 1
-        TotalWidth = 0
-        ColumnWidths.Clear()
-
-        ' Hitung total lebar tabel dan lebar tiap kolom
-        For Each col As DataGridViewColumn In PrintGridView.Columns
-            ColumnWidths.Add(col.Width)
-            TotalWidth += col.Width
-        Next
-    End Sub
-
-    Private Sub PrintDoc_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDoc.PrintPage
-        Dim leftMargin As Integer = e.MarginBounds.Left
-        Dim topMargin As Integer = e.MarginBounds.Top
-        Dim cellHeight As Integer = PrintGridView.Rows(0).Height + 5
-        Dim startY As Integer = topMargin
-        Dim scaleFactor As Single = CSng(e.MarginBounds.Width) / TotalWidth
-        Dim currentRow As Integer = 0
-
-        ' Header Tabel
-        Dim headerFont As New Font("Arial", 10, FontStyle.Bold)
-        Dim dataFont As New Font("Arial", 9, FontStyle.Regular)
-
-        ' Cetak Header
-        Dim currentX As Integer = leftMargin
-        For i As Integer = 0 To PrintGridView.ColumnCount - 1
-            Dim colWidth As Integer = CInt(ColumnWidths(i) * scaleFactor)
-            e.Graphics.FillRectangle(Brushes.LightGray, New Rectangle(currentX, startY, colWidth, cellHeight))
-            e.Graphics.DrawRectangle(Pens.Black, New Rectangle(currentX, startY, colWidth, cellHeight))
-            e.Graphics.DrawString(PrintGridView.Columns(i).HeaderText, headerFont, Brushes.Black, New RectangleF(currentX, startY, colWidth, cellHeight))
-            currentX += colWidth
-        Next
-        startY += cellHeight
-
-        ' Cetak Data Baris
-        For Each row As DataGridViewRow In PrintGridView.Rows
-            If Not row.IsNewRow Then
-                currentX = leftMargin
-                For colIndex As Integer = 0 To PrintGridView.ColumnCount - 1
-                    Dim colWidth As Integer = CInt(ColumnWidths(colIndex) * scaleFactor)
-                    e.Graphics.DrawRectangle(Pens.Black, New Rectangle(currentX, startY, colWidth, cellHeight))
-                    e.Graphics.DrawString(row.Cells(colIndex).Value?.ToString(), dataFont, Brushes.Black, New RectangleF(currentX, startY, colWidth, cellHeight))
-                    currentX += colWidth
-                Next
-                startY += cellHeight
-                currentRow += 1
-
-                ' Periksa apakah halaman cukup
-                If startY + cellHeight > e.MarginBounds.Bottom Then
-                    e.HasMorePages = True
-                    Exit Sub
-                End If
-            End If
-        Next
-
-        ' Jika selesai, set ke False
-        e.HasMorePages = False
-    End Sub
 End Class

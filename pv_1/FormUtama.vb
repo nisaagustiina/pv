@@ -8,18 +8,18 @@
     ' Event Load saat Form Utama dijalankan
     Private Sub FormUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Inisialisasi DataTable
-        With DataPasien.Columns
-            .Add("Nama Pasien", GetType(String))
-            .Add("Nomor Rekam Medis", GetType(String))
-            .Add("NIK", GetType(String))
-            .Add("Tempat Lahir", GetType(String))
-            .Add("Tanggal Lahir", GetType(Date))
-            .Add("Jenis Kelamin", GetType(String))
-            .Add("Usia", GetType(Integer))
-            .Add("Alamat", GetType(String))
-            .Add("Nomor Telepon", GetType(String))
-        End With
+        '' Inisialisasi DataTable
+        'With DataPasien.Columns
+        '    .Add("Nama Pasien", GetType(String))
+        '    .Add("Nomor Rekam Medis", GetType(String))
+        '    .Add("NIK", GetType(String))
+        '    .Add("Tempat Lahir", GetType(String))
+        '    .Add("Tanggal Lahir", GetType(Date))
+        '    .Add("Jenis Kelamin", GetType(String))
+        '    .Add("Usia", GetType(Integer))
+        '    .Add("Alamat", GetType(String))
+        '    .Add("Nomor Telepon", GetType(String))
+        'End With
 
         ' Mengubah warna latar belakang Panel 
         plnNavigasi.BackColor = ColorTranslator.FromHtml("#0D9276")

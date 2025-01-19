@@ -23,40 +23,72 @@ Partial Class FormDataPendaftaran
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         dgvDataPendaftaran = New DataGridView()
-        Button1 = New Button()
+        btnDowlondFile = New Button()
+        lbDataPasien = New Label()
         CType(dgvDataPendaftaran, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dgvDataPendaftaran
         ' 
+        dgvDataPendaftaran.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        dgvDataPendaftaran.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvDataPendaftaran.BackgroundColor = SystemColors.ControlLightLight
         dgvDataPendaftaran.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvDataPendaftaran.Location = New Point(61, 69)
+        dgvDataPendaftaran.Location = New Point(51, 102)
+        dgvDataPendaftaran.Margin = New Padding(3, 7, 3, 7)
         dgvDataPendaftaran.Name = "dgvDataPendaftaran"
-        dgvDataPendaftaran.Size = New Size(1116, 563)
+        dgvDataPendaftaran.RowHeadersWidth = 51
+        dgvDataPendaftaran.Size = New Size(1115, 595)
         dgvDataPendaftaran.TabIndex = 0
         ' 
-        ' Button1
+        ' btnDowlondFile
         ' 
-        Button1.Location = New Point(1025, 26)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(113, 31)
-        Button1.TabIndex = 1
-        Button1.Text = "Print"
-        Button1.UseVisualStyleBackColor = True
+        btnDowlondFile.Anchor = AnchorStyles.Top Or AnchorStyles.Right
+        btnDowlondFile.BackColor = Color.FromArgb(CByte(13), CByte(146), CByte(118))
+        btnDowlondFile.Font = New Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDowlondFile.ForeColor = Color.FromArgb(CByte(255), CByte(246), CByte(233))
+        btnDowlondFile.Location = New Point(992, 51)
+        btnDowlondFile.Margin = New Padding(10)
+        btnDowlondFile.Name = "btnDowlondFile"
+        btnDowlondFile.Size = New Size(174, 47)
+        btnDowlondFile.TabIndex = 1
+        btnDowlondFile.Text = "Download File"
+        btnDowlondFile.UseVisualStyleBackColor = False
+        ' 
+        ' lbDataPasien
+        ' 
+        lbDataPasien.Anchor = AnchorStyles.Top
+        lbDataPasien.AutoSize = True
+        lbDataPasien.Font = New Font("Arial", 13.8F, FontStyle.Bold)
+        lbDataPasien.ForeColor = Color.FromArgb(CByte(25), CByte(69), CByte(107))
+        lbDataPasien.Location = New Point(498, 19)
+        lbDataPasien.Margin = New Padding(10)
+        lbDataPasien.Name = "lbDataPasien"
+        lbDataPasien.Size = New Size(255, 27)
+        lbDataPasien.TabIndex = 105
+        lbDataPasien.Text = "DATA PENDAFTARAN"
+        lbDataPasien.TextAlign = ContentAlignment.TopCenter
         ' 
         ' FormDataPendaftaran
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(8F, 44F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1242, 674)
-        Controls.Add(Button1)
+        BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
+        ClientSize = New Size(1200, 754)
+        Controls.Add(lbDataPasien)
+        Controls.Add(btnDowlondFile)
         Controls.Add(dgvDataPendaftaran)
+        Font = New Font("Sans Serif Collection", 7.8F)
+        Margin = New Padding(3, 7, 3, 7)
         Name = "FormDataPendaftaran"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Form Data Pendaftaran"
         CType(dgvDataPendaftaran, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents dgvDataPendaftaran As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDowlondFile As Button
+    Friend WithEvents lbDataPasien As Label
 End Class

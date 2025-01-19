@@ -84,13 +84,12 @@ Partial Class FormBmi
         lblName.ForeColor = SystemColors.ControlLightLight
         lblName.Location = New Point(97, 59)
         lblName.Name = "lblName"
-        lblName.Size = New Size(63, 51)
+        lblName.Size = New Size(135, 51)
         lblName.TabIndex = 78
-        lblName.Text = "No RM"
+        lblName.Text = "No Rekam Medis"
         ' 
         ' txtMRName
         ' 
-
         txtMRName.Font = New Font("Arial", 10.2F)
         txtMRName.Location = New Point(281, 59)
         txtMRName.Margin = New Padding(3, 4, 3, 4)
@@ -148,6 +147,7 @@ Partial Class FormBmi
         btnReset.UseVisualStyleBackColor = False
         ' 
         ' lblPerhitunganBMI
+        ' 
         lblPerhitunganBMI.Anchor = AnchorStyles.None
         lblPerhitunganBMI.AutoSize = True
         lblPerhitunganBMI.BackColor = Color.FromArgb(CByte(187), CByte(226), CByte(236))
@@ -160,7 +160,6 @@ Partial Class FormBmi
         lblPerhitunganBMI.TabIndex = 9
         lblPerhitunganBMI.Text = "PERHITUNGAN BMI"
         lblPerhitunganBMI.TextAlign = ContentAlignment.MiddleCenter
-
         ' 
         ' FormBmi
         ' 
